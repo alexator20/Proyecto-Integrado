@@ -1,0 +1,58 @@
+
+=========================================
+
+Inicio
+
+Registrar Usuario
+Registrar Contraseña
+
+=========================================
+
+Buscador lateral INICIO:
+
+
+Cafes y Infusiones
+Licores
+Bebidas
+Bocadillos
+Tapas
+Montaditos
+Ofertas y Combos
+-Desayunos
+-Almuerzos
+-Meriendas
+Bolleria
+Helados
+
+=========================================
+
+Pag Principal
+
+Calculadora Manual
+NAV:
+-Inicio
+-Perfil Usuario
+-Cerrar caja
+-Productos mas Vendidos
+
+=========================================
+
+Perfil Usuario
+
+Nombre
+Apellidos
+Correo
+Foto
+Notas
+
+=========================================
+
+
+Perfil AD
+
+Editar articulos
+Cerrar caja
+
+
+
+
