@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../css/register.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Register</h1>
+    <!--     El post se usa para determinar el metodo y puede ser GET o POST -->
+    <form action="" method="post">
+        <p> <label for="nombre"></label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required><br>
+        </p>
+        <p> <label for="fname" required></label>
+            <input type="text" id="apellidos" name="apellidos" placeholder="Primer apellido" required><br>
+        </p>
+        <p> <label for="fname" required></label>
+            <input type="text" id="apellido2" name="apellido2" placeholder="Segundo apellido" required><br>
+        </p>
+        <p> <label for="Gmail"></label>
+            <input type="email" id="Gmail" name="Gmail" placeholder="Correo electronico" required><br><br>
+        </p>
+        <p>
+            <label for="psw"><!-- <b>Password</b> --></label>
+            <input type="password" placeholder="Contraseña" name="psw" id="psw" required>
+        </p>
+        <p>
+            <label for="psw-repeat"></label>
+            <input type="password" placeholder="Repetir contraseña" name="psw-repeat" id="psw-repeat" required>
+            <hr>
+        </p>
+        <!-- <p> <textarea name="Observaciones" rows="10" cols="70"> </textarea> </p> -->
+        <button type="button">Enviar → </button>
+    </form>
+</body>
+
+</html>
