@@ -32,7 +32,7 @@ CREATE TABLE empleado (
     root BOOL NOT NULL,
     correo CHAR(255) NOT NULL,
     direccion CHAR(20),
-    foto VARCHAR(20),
+    foto VARCHAR(9999),
 	cod_ticket INT NOT NULL,
     FOREIGN KEY (cod_ticket) REFERENCES ticket(cod_ticket)
 );
@@ -311,3 +311,8 @@ INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (195,'Chupach
 INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (196,'Horchata Granizada 10L', 2.20, Bolleria);
 INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (197,'Limon Granizado 10L', 2.20, Bolleria);
 INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (198,'Café Granizado', 2.20, Bolleria);
+
+#Empleados 
+
+INSERT INTO empleado (cod_empleado, nombre, apellidos,contrasenya,root,direccion,foto) VALUES (1, 'Homero','Chino', 123456, TRUE, "Avd Rambleta,11" ,'https://files.liveworksheets.com/def_files/2022/5/20/205201759393906516/205201759393906516001.jpg' );
+INSERT INTO empleado (cod_empleado, nombre, apellidos,contrasenya,root,direccion,foto) VALUES (2, 'Andrés', 'Alguacil' , 654321 , FALSE , "Plaza España,15", 'https://pbs.twimg.com/media/EHXWE-HWwAA4PN4.jpg' );
