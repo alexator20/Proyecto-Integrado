@@ -1,3 +1,13 @@
+<!-- <?php
+
+declare(strict_types=1);
+require_once "vendor/autoloader.php";
+
+$sanidad = new Sanidad;
+if (count($_POST) > 0) {
+    $sanidad->insert($_POST);
+}
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,17 +25,19 @@
     <p class="tip"></p>
     <div class="cont">
         <div class="form sign-in">
-            <h2>Welcome back,</h2>
-            <label>
-                <span>Email</span>
-                <input type="email" />
-            </label>
-            <label>
-                <span>Password</span>
-                <input type="password" />
-            </label>
-            <p class="forgot-pass">Forgot password?</p>
-            <a href="../../index/index.html"><button type="button" class="submit">Sign In</button></a>
+            <form method="post" action="">
+                <h2>Welcome back,</h2>
+                <label>
+                    <span>Email</span>
+                    <input type="text" name="email" value="">
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" value="">
+                </label>
+                <p class="forgot-pass">Forgot password?</p>
+                <a href="../../index/index.html"><button type="button" class="submit">Sign In</button></a>
+            </form>
         </div>
         <div class="sub-cont">
             <div class="img">
@@ -43,20 +55,30 @@
                 </div>
             </div>
             <div class="form sign-up">
-                <h2>Time to feel like home,</h2>
-                <label>
-                    <span>Name</span>
-                    <input type="text" />
-                </label>
-                <label>
-                    <span>Email</span>
-                    <input type="email" />
-                </label>
-                <label>
-                    <span>Password</span>
-                    <input type="password" />
-                </label>
-                <a href="./register.html"><button type="button" class="submit">Sign In</button></a>
+                <form method="post" action="">
+                    <h2>Time to feel like home,</h2>
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="name" value="">
+                    </label>
+                    <label>
+                        <span>Surname</span>
+                        <input type="text" name="surname" value="">
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="text" name="email" value="">
+                    </label>
+                    <label>
+                        <span>Address</span>
+                        <input type="text" name="address" value="">
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password" value="">
+                    </label>
+                    <a href="./register.html"><button type="button" class="submit">Sign In</button></a>
+                </form>
             </div>
         </div>
     </div>
