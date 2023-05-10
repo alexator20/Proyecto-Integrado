@@ -38,7 +38,71 @@ CREATE TABLE producto_servido (
     FOREIGN KEY (cod_ticket) REFERENCES ticket(cod_ticket)
 );
 
+# Productos - "Cafes"
 
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (1, 'Café solo', 1.20, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (2, 'Cortado', 1.30, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (3, 'Americano', 1.40, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (4, 'Bombon', 1.50, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (5, 'Café con leche', 1.60, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (6, 'Carajillo Marie brizard,terry, negrita', 1.60, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (7, 'Carajillo de Cutty Sark,JB,Baileys', 1.80, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (8, 'Cremaet', 2.00, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (9, 'Capuchino', 2.00, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (10, 'Cola Cao', 1.60, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (11, 'Té Natural', 1.50, "Cafes");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (12, 'Chocolate a la taza', 2.00, "Cafes");
+
+# Productos - "Licores"
+
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (13, 'Cazalla Tenis', 1.10, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (14, 'Barrejat (cazalla y mistela)', 1.20, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (15, 'Chupito Licor de hierbas, Arroz ó Negrita', 1.30, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (16, 'Chupito de Cutty Shark ó J&B', 1.70, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (17, 'Chupito de Jack D. ó Johnnie W. Red Label', 2.50, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (18, 'Copa de Terry ó Ron Negrita', 1.70, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (19, 'Copa Pacharán Zoco ó Ponche Caballero', 1.70, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (20, 'Copa Licor de Hierbas o Licor de Arroz', 1.70, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (21, 'Copa Cutty, J&B Ó Bourbon Four Roses', 2.80, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (22, 'Copa de Baileys, Tia Maria ó Frangelico', 2.80, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (23, 'Copa de Martini Blanco o Rosso', 2.80, "Licores");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (24, 'Gin Tonic o Cubata', 5.50, "Licores");
+
+# Productos - "Bebidas"
+
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (25,'Agua Fontvella 50cl', 1.20, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (26,'Agua Fontvella 1,5L', 1.60, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (27,'Agua con Gas Malavella', 1.70, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (28,'Zumo de Naranja Nat Peq', 1.70, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (29,'Zumo de Naranja Nat Max', 2.20, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (30,'Zumo Granini Piña', 1.90, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (31,'Zumo Granini Melocoton', 1.90, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (32,'Cholec Vainilla', 1.90, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (33,'Cholec Chocolate', 1.90, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (34,'Cocacola', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (35,'Cocacola Zero', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (36,'Cocacola Zero Zero', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (37,'Acuarius Naranja', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (38,'Acuarius Limon', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (39,'Fanta Naranja', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (40,'Fanta Limon', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (41,'Trina de Naranja', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (42,'Tonica Schweppes', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (43,'Bitter Kas', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (44,'Tinto La Casera', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (45,'Bote Refrescos', 1.20, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (46,'Copa Vino "De la casa"', 1.50, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (47,'Copa de vino "Selección"', 2.50, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (48,'Cruzcampo (Caña)', 1.40, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (49,'Cruzcampo (Doble)', 1.90, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (50,'Cruzcampo (Tanque)', 2.90, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (51,'San Miguel', 1.80, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (52,'San Miguel 0,0', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (53,'Radler Cruzcampo', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (54,'Estrella Galicia', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (55,'Heineken 0,0', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (56,'Turia', 2.00, "Bebidas");
+INSERT INTO producto (cod_producto,nombre,precio,categoria) VALUES (57,'Alambra Reserva 1925', 2.20, "Bebidas");
 
 
 #Productos
