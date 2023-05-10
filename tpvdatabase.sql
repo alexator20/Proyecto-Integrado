@@ -13,10 +13,10 @@ CREATE TABLE empleado (
     cod_empleado INT PRIMARY KEY NOT NULL,
     nombre CHAR(20) NOT NULL,
     apellidos CHAR(20) NOT NULL,
-    contrasenya CHAR(20) NOT NULL,
     root BOOL NOT NULL,
     correo CHAR(255) NOT NULL,
     direccion CHAR(40),
+    contrasenya CHAR(20) NOT NULL,
     foto VARCHAR(9999)
 );
 
@@ -226,8 +226,7 @@ INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (
 INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (179, 'Peq_Carne de Caballo con Ajitos Tiernos',6.50,"BocadillosCombo");
 INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (180, 'Gran_Carne de Caballo con Ajitos Tiernos',7.50,"BocadillosCombo");
 
-INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (1, 'Homero','Chino',123456,TRUE,"HomeroChino42@hotmail.com","Avd Rambleta,11",'https://files.liveworksheets.com/def_files/2022/5/20/205201759393906516/205201759393906516001.jpg');
-INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (2, 'Andrés','Alguacil',654321,FALSE,"LilBokeron88@gmail.com","Plaza España,15",'https://pbs.twimg.com/media/EHXWE-HWwAA4PN4.jpg');
+# Infusiones
 
 INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (181, 'MANZANILLA PIRAMIDE ',1.60,"Infusiones");
 INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (182, 'MENTA-POLEO PIRAMIDE  ',1.60,"Infusiones");
@@ -247,3 +246,8 @@ INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (
 INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (196, 'TE ROIBOS CLASICO  ',1.60,"Infusiones");
 INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (197, 'TE CAFÉ VERDE INFUSION   ',1.60,"Infusiones");
 INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (198, 'TE INFUSION CEREZA ',1.60,"Infusiones");
+
+# Empleados
+
+INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (1, 'Homero','Chino',123456,TRUE,"HomeroChino42@hotmail.com","Avd Rambleta,11",'https://files.liveworksheets.com/def_files/2022/5/20/205201759393906516/205201759393906516001.jpg');
+INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (2, 'Andrés','Alguacil',654321,FALSE,"LilBokeron88@gmail.com","Plaza España,15",'https://pbs.twimg.com/media/EHXWE-HWwAA4PN4.jpg');
