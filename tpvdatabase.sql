@@ -249,5 +249,5 @@ INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (
 
 # Empleados
 
-INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (1, 'Homero','Chino',123456,TRUE,"HomeroChino42@hotmail.com","Avd Rambleta,11",'https://files.liveworksheets.com/def_files/2022/5/20/205201759393906516/205201759393906516001.jpg');
-INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (2, 'Andrés','Alguacil',654321,FALSE,"LilBokeron88@gmail.com","Plaza España,15",'https://pbs.twimg.com/media/EHXWE-HWwAA4PN4.jpg');
+INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (1, 'David','Chirivella',123456,TRUE,"Dechiri224@hotmail.com","Avd Rambleta,11",'Código/Assets/imgs/');
+INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (2, 'Andrés','Alguacil',654321,FALSE,"LilBokeron88@gmail.com","Plaza España,15",'Código/Assets/imgs/');
