@@ -3,6 +3,12 @@
 class Connection
 {
     protected PDO $conn;
+
+    public function __construct()
+    {
+        $this->connect();
+    }
+    
     protected function connect()
     {
         $config = json_decode(file_get_contents(__DIR__ . "../js/dba.json"), true);
