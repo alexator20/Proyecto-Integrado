@@ -1,11 +1,34 @@
-<!-- <?php
-require_once "../php/autoloader.php";
+<?php
 
-$empleado = new Empleado;
+declare(strict_types=1);
+require_once __DIR__ . "/autoloader.php";
 if (count($_POST) > 0) {
-    $empleado->insert($_POST);
+
+    try {
+        $repository = new Empleado;
+
+        $data = [
+            'name' => $_POST["name"],
+            'lastname' => $_POST["lastname"],
+            'email' => $_POST["email"],
+            'address' => $_POST["address"],
+            'password' => $_POST["password"]
+        ];
+
+        $rowsAffected = $repository->insert($data);
+
+        echo "Filas afectadas: " . $rowsAffected . "</br>";
+
+        /* echo "<pre>";
+        var_dump($result);
+        echo "</pre>"; */
+
+    } catch (PDOException $e) {
+        echo "<br>Se ha producido un fallo, inténtelo más tarde. ";
+    }
 }
-?> -->
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +37,7 @@ if (count($_POST) > 0) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register y log in</title>
-    <link href="../css/register.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Codigo/Assets/css/register.css">
 </head>
 
 <!-- referencia: https://codepen.io/suez/pen/RpNXOR -->
@@ -60,8 +83,8 @@ if (count($_POST) > 0) {
                         <input type="text" name="name" value="">
                     </label>
                     <label>
-                        <span>Surname</span>
-                        <input type="text" name="surname" value="">
+                        <span>Last name</span>
+                        <input type="text" name="lastname" value="">
                     </label>
                     <label>
                         <span>Email</span>

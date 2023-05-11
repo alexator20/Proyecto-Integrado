@@ -10,14 +10,14 @@ class Empleado extends Connection{
     public function insert(array $data): void
     {
         $name = $data["name"];
-        $surname = $data["surname"];
+        $lastname = $data["lastname"];
         $email = $data["email"];
         $address = $data["address"];
         $password = $data["password"];
 
         $sql = "INSERT INTO empleado
         (nombre,apellidos,correo,direccion,contrasenya) 
-        VALUES ($name,$surname,$email,$address,$password)";
+        VALUES ($name,$lastname,$email,$address,$password)";
 
         $this->conn->query($sql);
     }
