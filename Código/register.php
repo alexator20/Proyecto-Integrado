@@ -50,7 +50,7 @@ if (count($_POST) > 0) {
                 <h2>Welcome back,</h2>
                 <label>
                     <span>Email</span>
-                    <input type="text" name="email" value="">
+                    <input type="text" name="email" placeholder="example@gmail.com" value="">
                 </label>
                 <label>
                     <span>Password</span>
