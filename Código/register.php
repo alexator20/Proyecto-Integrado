@@ -50,11 +50,11 @@ if (count($_POST) > 0) {
                 <h2>Welcome back,</h2>
                 <label>
                     <span>Email</span>
-                    <input type="text" name="email" value="">
+                    <input type="text" name="email" placeholder="example@gmail.com" value="">
                 </label>
                 <label>
                     <span>Password</span>
-                    <input type="password" name="password" value="">
+                    <input type="password" name="password"  minlength="6" maxlength="20" value="" required>
                 </label>
                 <p class="forgot-pass">Forgot password?</p>
                 <a href="./index.html"><button type="button" class="submit">Sign In</button></a>
@@ -88,7 +88,7 @@ if (count($_POST) > 0) {
                     </label>
                     <label>
                         <span>Email</span>
-                        <input type="text" name="email" value="">
+                        <input type="text" name="email" placeholder="example@gmail.com" value="">
                     </label>
                     <label>
                         <span>Address</span>
@@ -96,9 +96,10 @@ if (count($_POST) > 0) {
                     </label>
                     <label>
                         <span>Password</span>
-                        <input type="password" name="password" value="">
+                        <input type="password" name="password" minlength="6" maxlength="20" value="" required>
                     </label>
-                    <a href="./register.php"><button type="button" class="submit">Sign In</button></a>
+                    <!-- <a href="./register.php"><button type="button" class="submit">Sign In</button></a> -->
+                    <button type="submit" class="submit" value="Sign In">
                 </form>
             </div>
         </div>

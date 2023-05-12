@@ -17,7 +17,9 @@ class Empleado extends Connection{
 
         $sql = "INSERT INTO empleado
         (nombre,apellidos,correo,direccion,contrasenya) 
-        VALUES ($name,$lastname,$email,$address,$password)";
+        VALUES ('$name','$lastname','$email','$address','$password')";
+        /* echo $sql;
+        die; */
 
         $this->conn->query($sql);
     }
