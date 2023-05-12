@@ -37,7 +37,7 @@ if (count($_POST) > 0) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register y log in</title>
-    <link rel="stylesheet" href="/Código/Assets/css/register.css">
+    <link rel="stylesheet" href="./Assets/css/register.css">
 </head>
 
 <!-- referencia: https://codepen.io/suez/pen/RpNXOR -->
@@ -57,7 +57,7 @@ if (count($_POST) > 0) {
                     <input type="password" name="password" value="">
                 </label>
                 <p class="forgot-pass">Forgot password?</p>
-                <a href="/Código/index/index.html"><button type="button" class="submit">Sign In</button></a>
+                <a href="./index.html"><button type="button" class="submit">Sign In</button></a>
             </form>
         </div>
         <div class="sub-cont">
@@ -98,12 +98,12 @@ if (count($_POST) > 0) {
                         <span>Password</span>
                         <input type="password" name="password" value="">
                     </label>
-                    <button type="button" class="submit">Sign In</button>
+                    <a href="./register.php"><button type="button" class="submit">Sign In</button></a>
                 </form>
             </div>
         </div>
     </div>
-    <script src="../js/register.js"></script>
+    <script src="./Assets/js/register.js"></script>
 </body>
 
 </html>
