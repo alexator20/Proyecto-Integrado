@@ -51,23 +51,23 @@ $security->checkLoggedIn(); */
                 </div>
             </div>
             <div class="form sign-up">
-                <form method="post" action="signUp.php">
+                <form method="post" action="./signUp.php">
                     <h2>Time to feel like home,</h2>
                     <label>
                         <span>Name</span>
-                        <input type="text" name="name" value="">
+                        <input type="text" name="name" value="" required>
                     </label>
                     <label>
                         <span>Last name</span>
-                        <input type="text" name="lastname" value="">
+                        <input type="text" name="lastname" value="" required>
                     </label>
                     <label>
                         <span>Email</span>
-                        <input type="text" name="email" placeholder="example@gmail.com" value="">
+                        <input type="text" name="email" placeholder="example@gmail.com" value="" required>
                     </label>
                     <label>
                         <span>Address</span>
-                        <input type="text" name="address" value="">
+                        <input type="text" name="address" value="" required>
                     </label>
                     <label>
                         <span>Password</span>
