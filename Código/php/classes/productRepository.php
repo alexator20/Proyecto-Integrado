@@ -32,4 +32,20 @@ class productRepository extends Connection{
         }
         return $data;
     }
+
+    public function drawProductCard(int $id, array $arr) {
+
+        $output = "";
+        //bucle
+        foreach ($arr as $key) {
+            $output .= "<div class='col tarjetas text-center'>";
+            $output .= "<div class='card' style='width: 14rem;'>";
+            $output .= "<img src='./Assets/imgs/productos/'".$key->getCategoria()."'/'".$key->getImagen()."'' class='card-img-top' alt='...'>";
+            $output .= "<div class='card-body'>";
+            $output .= "<h6 class='card-title'>".$key->getNombre()."</h6>";
+            $output .= "<a href='#/'".$key->getPrecio()."'' class='btn btn-dark'>Mini</a>";
+            $output .= "<a href='#/'".($key->getPrecio() + 1)."'' class='btn btn-dark'>Maxi</a>";
+            $output .= "</div></div></div>";
+        }
+    }
 }
