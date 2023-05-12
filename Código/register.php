@@ -18,6 +18,9 @@ $security->checkLoggedIn(); */
 <!-- referencia: https://codepen.io/suez/pen/RpNXOR -->
 
 <body>
+
+<img class="logo" src="Assets/imgs/WhatsApp Image 2023-05-12 at 13.19.42.jpeg" width="120px" height="120px">
+
     <div class="container text-center">
     <div class="row align-items-center">
         <div class="col">
