@@ -88,7 +88,7 @@ if (count($_POST) > 0) {
                     </label>
                     <label>
                         <span>Email</span>
-                        <input type="text" name="email" value="">
+                        <input type="text" name="email" placeholder="example@gmail.com" value="">
                     </label>
                     <label>
                         <span>Address</span>
