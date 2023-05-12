@@ -1,34 +1,9 @@
 <?php
-
-declare(strict_types=1);
 require_once __DIR__ . "/php/autoloader.php";
-if (count($_POST) > 0) {
-
-    try {
-        $repository = new Empleado;
-
-        $data = [
-            'name' => $_POST["name"],
-            'lastname' => $_POST["lastname"],
-            'email' => $_POST["email"],
-            'address' => $_POST["address"],
-            'password' => $_POST["password"]
-        ];
-
-        $rowsAffected = $repository->insert($data);
-
-        echo "Filas afectadas: " . $rowsAffected . "</br>";
-
-        /* echo "<pre>";
-        var_dump($result);
-        echo "</pre>"; */
-
-    } catch (PDOException $e) {
-        echo "<br>Se ha producido un fallo, inténtelo más tarde. ";
-    }
-}
-
+/* $security = new Security();
+$security->checkLoggedIn(); */
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,7 +51,7 @@ if (count($_POST) > 0) {
                 </div>
             </div>
             <div class="form sign-up">
-                <form method="post" action="">
+                <form method="post" action="signUp.php">
                     <h2>Time to feel like home,</h2>
                     <label>
                         <span>Name</span>
@@ -99,7 +74,7 @@ if (count($_POST) > 0) {
                         <input type="password" name="password" minlength="6" maxlength="20" value="" required>
                     </label>
                     <!-- <a href="./register.php"><button type="button" class="submit">Sign In</button></a> -->
-                    <button type="submit" class="submit" value="Sign In">
+                    <button type="submit" class="submit" value="Sign In">Sign Up</button>
                 </form>
             </div>
         </div>
