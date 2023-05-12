@@ -6,7 +6,6 @@ margin-top: -50px;
 
 
 
-
 .lateral li {
   display: flex;
   width: 100%;
@@ -214,3 +213,12 @@ margin-top: -50px;
 
 
 /* --------------------------------centro----------------------------------- */
+
+.tarjetas{
+margin: 10px;
+padding-left: 40px;
+}
+
+.pagination{
+  padding-top: 10px;
+}
