@@ -31,7 +31,7 @@ $security->checkLoggedIn(); */
                     <span>Password</span>
                     <input type="password" name="password"  minlength="6" maxlength="20" value="" required>
                 </label>
-                <p class="forgot-pass">Forgot password?</p>
+                <a href="./forgot.html"><p class="forgot-pass">Forgot password?</p></a>
                 <a href="./index.html"><button type="button" class="submit">Sign In</button></a>
             </form>
         </div>
