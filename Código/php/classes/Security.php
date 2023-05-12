@@ -69,3 +69,31 @@ class Security extends Connection
         }
     }
 }
+
+function forgotPassword($email, $new_password) {
+  
+  
+    // Crear una consulta SQL para buscar el usuario por su dirección de correo electrónico
+    $sql = "SELECT * FROM empleado WHERE correo='$email'";
+  
+    // Ejecutar la consulta y almacenar el resultado en una variable
+    $result = $conn->query($sql);
+  
+    // Comprobar si se encontró un usuario con ese correo electrónico
+    if ($result->num_rows > 0) {
+      // Crear una consulta SQL para actualizar la contraseña del usuario
+      $sql = "UPDATE empleado SET contrasenya='$new_password' WHERE correo='$email'";
+  
+      // Ejecutar la consulta
+      if ($conn->query($sql) === TRUE) {
+        echo "Contraseña actualizada correctamente";
+      } else {
+        echo "Error al actualizar la contraseña: " . $conn->error;
+      }
+    } else {
+      echo "No se encontró ningún usuario con ese correo electrónico";
+    }
+  
+  }
+  
+  
