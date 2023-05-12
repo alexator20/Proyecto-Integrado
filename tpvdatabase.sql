@@ -249,5 +249,5 @@ INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`,`categoria`) VALUES (
 
 # Empleados
 
-INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (1, 'David','Chirivella',123456,TRUE,"Dechiri224@hotmail.com","Avd Rambleta,11",'Código/Assets/imgs/');
-INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (2, 'Andrés','Alguacil',654321,FALSE,"LilBokeron88@gmail.com","Plaza España,15",'Código/Assets/imgs/');
+INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (1, 'David','Chirivella',123456,TRUE,"Dechiri224@hotmail.com","Avd Rambleta,11",'');
+INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`,`contrasenya`,`root`,`correo`,`direccion`,`foto`) VALUES (2, 'Andrés','Alguacil',654321,FALSE,"LilBokeron88@gmail.com","Plaza España,15",'');
