@@ -6,7 +6,7 @@ $security->checkLoggedIn();
 ?> */
 class Security extends Connection
 {
-    private $loginPage = "login.php";
+    private $loginPage = "../../register.php";
     private $homePage = "index.php";
     public function __construct()
     {
