@@ -43,6 +43,9 @@ if (count($_POST) > 0) {
 <!-- referencia: https://codepen.io/suez/pen/RpNXOR -->
 
 <body>
+    <div class="container text-center">
+    <div class="row align-items-center">
+        <div class="col">
     <p class="tip"></p>
     <div class="cont">
         <div class="form sign-in">
@@ -103,6 +106,9 @@ if (count($_POST) > 0) {
                 </form>
             </div>
         </div>
+    </div>
+        </div>
+    </div>
     </div>
     <script src="./Assets/js/register.js"></script>
 </body>
