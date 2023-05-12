@@ -6,7 +6,7 @@ CREATE TABLE producto (
     cod_producto INT AUTO_INCREMENT PRIMARY KEY,
     nombre CHAR(20) NOT NULL,
     precio FLOAT (10,2) NOT NULL,
-    categoria CHAR(50) NOT NULL
+    categoria CHAR(50) NOT NULL,
     imagen varchar(50) NOT NULL
 );
 
