@@ -98,7 +98,8 @@ if (count($_POST) > 0) {
                         <span>Password</span>
                         <input type="password" name="password" minlength="6" maxlength="20" value="" required>
                     </label>
-                    <a href="./register.php"><button type="button" class="submit">Sign In</button></a>
+                    <!-- <a href="./register.php"><button type="button" class="submit">Sign In</button></a> -->
+                    <button type="submit" class="submit" value="Sign In">
                 </form>
             </div>
         </div>

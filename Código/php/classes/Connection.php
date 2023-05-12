@@ -2,7 +2,7 @@
 
 class Connection
 {
-    protected PDO $conn;
+    protected ?PDO $conn;
 
     public function __construct()
     {
@@ -11,7 +11,7 @@ class Connection
     
     protected function connect()
     {
-        $config = json_decode(file_get_contents(__DIR__ . "/Código/Assets/js/dba.json"), true);
+        $config = json_decode(file_get_contents(__DIR__ . "/../../Assets/js/dba.json"), true);
         try {
             $this->conn = new PDO(
                 "mysql:host=" . $config["host"] . ";dbname=" . $config["dbname"] . ";port=" . $config["port"],
@@ -25,6 +25,6 @@ class Connection
 
     public function __destruct()
     {
-        if ($this->conn)  $this->conn = null;
+        if (isset($this->conn))  $this->conn = null;
     }
 }
