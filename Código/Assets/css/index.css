@@ -219,3 +219,8 @@ padding-left: 40px;
 .pagination{
   padding-top: 10px;
 }
+
+
+.no-resize {
+  object-fit: cover ;
+}
