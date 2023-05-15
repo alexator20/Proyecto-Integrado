@@ -1,9 +1,7 @@
 <?php
-/* <?php
-require_once "autoloader.php";
+/* require_once "autoloader.php";
 $security = new Security();
-$security->checkLoggedIn();
-?> */
+$security->checkLoggedIn(); */
 class Security extends Connection
 {
     private $loginPage = "../../register.php";
@@ -71,7 +69,6 @@ class Security extends Connection
 }
 
 function forgotPassword($email, $new_password) {
-  
   
     // Crear una consulta SQL para buscar el usuario por su dirección de correo electrónico
     $sql = "SELECT * FROM empleado WHERE correo='$email'";

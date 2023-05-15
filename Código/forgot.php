@@ -1,14 +1,16 @@
 
 <?php
-require_once("php/autoloader.php");
+require_once(__DIR__ . "/php/autoloader.php");
+
+$security = new Security();
 if (isset($_POST["forgot_password"])) {
   $email = $_POST["email"];
   $new_password = $_POST["new_password"]; // cambiar "password" a "new_password"
   
-  forgotPassword($email, $new_password); // llamar a la función forgotPassword()
+  $security->forgotPassword($email, $new_password); // llamar al método forgotPassword() de la instancia de la clase Security
 }
-  ?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +35,7 @@ if (isset($_POST["forgot_password"])) {
           <label>
             <span>Password</span>
             <div class="password-field">
-              <input type="password" name="password" minlength="6" maxlength="20" value="" required>
+              <input type="password" name="new_password" minlength="6" maxlength="20" value="" required>
             </div>
           </label>
           <a href="./register.php"><button type="submit" name="forgot_password" class="submit">UPDATE</button></a>
