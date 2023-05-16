@@ -6,9 +6,9 @@ class Product {
     private string $nombre;
     private float $precio;
     private string $categoria;
-    private string $imagen;
+    private ?string $imagen;
 
-    public function __construct(int $cod_producto, string $nombre,string $precio, string $categoria,string $imagen)
+    public function __construct(int $cod_producto, string $nombre,string $precio, string $categoria,?string $imagen)
     {
         $this->cod_producto = $cod_producto;
         $this->nombre = $nombre;
@@ -21,7 +21,7 @@ class Product {
     /**
      * Get the value of Imagen
      */
-    public function getImagen(): string
+    public function getImagen(): string | null
     {
         return $this->imagen;
     }
