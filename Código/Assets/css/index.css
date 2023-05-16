@@ -221,6 +221,12 @@ padding-left: 40px;
 }
 
 
-.no-resize {
-  object-fit: cover ;
+.centro{
+  border-right: 2px solid black;
+}
+
+
+
+.centro h1{
+  padding-top: 100px;
 }
