@@ -93,7 +93,4 @@ function forgotPassword($email, $new_password) {
     } else {
       echo "No se encontró ningún usuario con ese correo electrónico";
     }
-  
-  }
-  
-  
+}
