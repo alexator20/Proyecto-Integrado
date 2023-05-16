@@ -23,15 +23,4 @@ class Empleado extends Connection{
 
         $this->conn->query($sql);
     }
-
-    public function getAllEmpleados(): array{
-        /* $sql = "SELECT * FROM empleado";
-        $result = $this->conn->query($sql); */
-        $stmt = $this->conn->query("SELECT * FROM empleado");
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $data[] = $row;
-        }
-        return $data;
-    }
-
 }
