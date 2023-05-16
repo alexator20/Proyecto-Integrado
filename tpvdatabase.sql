@@ -122,24 +122,15 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Popular
 
 #BOCADILLOS
 
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Peq_Tortilla de Patata',4.00,"Bocadillos","tortillapatata.jpeg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Gran_Tortilla de Patata',5.00,"Bocadillos","tortillapatata.jpeg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Peq_Revuelto del Huerto (Champiñon con Ajos Tiernos)',4.00,"Bocadillos");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Gran_Revuelto del Huerto (Champiñon con Ajos Tiernos)',5.00,"Bocadillos");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Peq_Sobrasada con Queso y cebolla Caramelizada',4.00,"Bocadillos","sobrasada con queso y cebolla.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Gran_Sobrasada con Queso y cebolla Caramelizada',5.00,"Bocadillos","sobrasada con queso y cebolla.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Peq_Jamon con Tomate',4.00,"Bocadillos");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Gran_Jamon con Tomate',5.00,"Bocadillos");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Peq_Francesa con Jamon',4.00,"Bocadillos");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Gran_Francesa con Jamon',5.00,"Bocadillos");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Peq_Francesa con Sobrasada',4.00,"Bocadillos","francesa con sobrasada.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Gran_Francesa con Sobrasada',5.00,"Bocadillos","francesa con sobrasada.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Peq_Atun con Olivas',4.00,"Bocadillos");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Gran_Atun con Olivas',5.00,"Bocadillos");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Peq_Pechuga y Queso',4.00,"Bocadillos","pechuga y queso.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Gran_Pechuga y Queso',5.00,"Bocadillos","pechuga y queso.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Peq_Chistorra con patatas y huevo',4.50,"Bocadillos");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Gran_Chistorra con patatas y huevo',5.50,"Bocadillos");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tortilla de Patata',4.00,"Bocadillos","tortillapatata.jpeg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Revuelto del Huerto (Champiñon con Ajos Tiernos)',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Sobrasada con Queso y cebolla Caramelizada',4.00,"Bocadillos","sobrasada con queso y cebolla.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Jamon con Tomate',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Francesa con Jamon',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Francesa con Sobrasada',4.00,"Bocadillos","francesa con sobrasada.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Atun con Olivas',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Pechuga y Queso',4.00,"Bocadillos","pechuga y queso.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Chistorra con patatas y huevo',4.50,"Bocadillos","NULL");
 
 #TAPAS 
 
