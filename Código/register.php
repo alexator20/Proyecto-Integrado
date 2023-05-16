@@ -1,8 +1,10 @@
 <?php
 require_once __DIR__ . "/php/autoloader.php";
-/* $security = new Security();
-$security->checkLoggedIn(); */
+
+$security = new Security();
+$security->checkLoggedIn();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +40,7 @@ $security->checkLoggedIn(); */
                     <input type="password" name="password"  minlength="6" maxlength="20" value="" required>
                 </label>
                 <a href="./forgot.php"><p class="forgot-pass">Forgot password?</p></a>
-                <a href="./index.html"><button type="button" class="submit">Sign In</button></a>
+                <button type="submit" class="submit" name="login">Sign In</button></a>
             </form>
         </div>
         <div class="sub-cont">
@@ -57,7 +59,7 @@ $security->checkLoggedIn(); */
                 </div>
             </div>
             <div class="form sign-up">
-                <form method="post" action="./signUp.php">
+                <form method="post" action="signUp.php">
                     <h2>Time to feel like home,</h2>
                     <label>
                         <span>Name</span>
