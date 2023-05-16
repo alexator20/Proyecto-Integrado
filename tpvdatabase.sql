@@ -6,7 +6,7 @@ CREATE TABLE producto (
     cod_producto INT AUTO_INCREMENT PRIMARY KEY,
     nombre CHAR(20) NOT NULL,
     precio FLOAT (10,2) NOT NULL,
-    categoria CHAR(50) NOT NULL
+    categoria CHAR(50) NOT NULL,
     imagen varchar(50) NOT NULL
 );
 
@@ -62,27 +62,27 @@ INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'TE VERDE GUNPOW
 
 # CERVEZAS
 
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Caña)', 1.40, "cana.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Doble)', 1.90, "doble.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Tanque)', 2.90, "tanque.png");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('San Miguel', 1.80, "sanmiguel.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('San Miguel 0,0', 2.00, "sanmiguel00.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Radler Cruzcampo', 2.00, "radler.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Estrella Galicia', 2.00, "galicia.png");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Heineken 0,0', 2.00, "heineken00.png");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Turia', 2.00, "turia.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Caña)', 1.40,"Cervezas", "cana.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Doble)', 1.90,"Cervezas","doble.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Tanque)', 2.90,"Cervezas", "tanque.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('San Miguel', 1.80,"Cervezas", "sanmiguel.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('San Miguel 0,0', 2.00,"Cervezas", "sanmiguel00.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Radler Cruzcampo', 2.00,"Cervezas", "radler.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Estrella Galicia', 2.00,"Cervezas", "galicia.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Heineken 0,0', 2.00,"Cervezas", "heineken00.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Turia', 2.00,"Cervezas", "turia.jpg");
 
 # REFRESCOS
 
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola', 2.00, "cola.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero', 2.00, "cocazero.png");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero Zero', 2.00, "cocazerozero.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Acuarius Naranja', 2.00, "acuariusnaranja.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Acuarius Limon', 2.00, "acuariuslimon.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Fanta Naranja', 2.00, "fantalimon.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Fanta Limon', 2.00, "fantanaranja.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Trina de Naranja', 2.00, "trinanaranja.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Tonica Schweppes', 2.00, "tonica.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola', 2.00,"Refrescos", "cola.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero', 2.00,"Refrescos", "cocazero.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero Zero', 2.00,"Refrescos", "cocazerozero.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Acuarius Naranja', 2.00,"Refrescos", "acuariusnaranja.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Acuarius Limon', 2.00,"Refrescos", "acuariuslimon.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Fanta Naranja', 2.00,"Refrescos", "fantalimon.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Fanta Limon', 2.00,"Refrescos", "fantanaranja.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Trina de Naranja', 2.00,"Refrescos", "trinanaranja.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Tonica Schweppes', 2.00,"Refrescos", "tonica.png");
 
 #LICORES
 
@@ -130,7 +130,7 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Francesa con Ja
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Francesa con Sobrasada',4.00,"Bocadillos","francesa con sobrasada.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Atun con Olivas',4.00,"Bocadillos","NULL");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Pechuga y Queso',4.00,"Bocadillos","pechuga y queso.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Chistorra con patatas y huevo',4.50,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Chistorra con patatas y huevo',4.50,"Bocadillos","chistorrapatata.jpg");
 
 #TAPAS 
 
