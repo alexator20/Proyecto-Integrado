@@ -63,7 +63,6 @@ class Security extends Connection
     private function getUser($userName)
     {
         $sql = "SELECT * FROM empleado WHERE correo = '$userName'";
-        echo $sql;
         $result = $this->conn->query($sql);
         if ($result && $row = $result->fetch(PDO::FETCH_ASSOC)) {
             return $row;
