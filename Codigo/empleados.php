@@ -1,12 +1,11 @@
-<!-- $security = new Security();
-//para comprobar si estas logeado
-$security->checkLoggedIn(); -->
-
 <?php
 require_once __DIR__ . "/php/autoloader.php";
-$empleado = new Empleado();
-
+$security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn();
+//$empleado = new Empleado();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
