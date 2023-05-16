@@ -26,7 +26,6 @@ class Security extends Connection
         if (count($_POST) > 0) {
             $user = $this->getUser($_POST["email"]);
             $_SESSION["loggedIn"] = $this->checkUser($user, $_POST["password"]) ? $user : false;
-            var_dump($_SESSION["loggedIn"]);
             if ($_SESSION["loggedIn"]) {
                 header("Location: " . $this->homePage);
             } else {
