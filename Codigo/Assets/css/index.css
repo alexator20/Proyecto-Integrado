@@ -226,3 +226,19 @@ padding-top: 20px;
 h1{
   padding-top: 100px;
 }
+
+
+/* --------------------------------EMPLEADOS----------------------------------- */
+
+tr{
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+td{
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+
+}
