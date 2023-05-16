@@ -1,8 +1,12 @@
 <!-- <?php
 require_once __DIR__ . "/php/autoloader.php";
-$security = new Security();
+/* $security = new Security();
 //para comprobar si estas logeado
-$security->checkLoggedIn();
+$security->checkLoggedIn(); */
+
+$category = isset($_GET["categoria"])? $_GET["categoria"] : "Bebidas"  ;
+
+$repository = new productRepository;
 ?> -->
 <!DOCTYPE html>
 <html lang="es">
@@ -35,7 +39,7 @@ $security->checkLoggedIn();
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="index.html">INICIO</a>
+							<a class="nav-link active" aria-current="page" href="index.php">INICIO</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
@@ -77,96 +81,7 @@ $security->checkLoggedIn();
 				<div class="col-xxl-8 col-lg-10" style="border-right:2px solid black;">
 					<div class="container text-center">
 						<div class="row text-center">
-							<div class="col tarjetas text-center">
-								<div class="card" style="width: 14rem;">
-									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h6 class="card-title">Bocata</h6>
-										<a href="#" class="btn btn-dark">Mini</a>
-										<a href="#" class="btn btn-dark">Maxi</a>
-									</div>
-								</div>
-							</div>
-							<div class="col tarjetas text-center">
-								<div class="card" style="width: 14rem;">
-									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h6 class="card-title">Bocata</h6>
-										<a href="#" class="btn btn-dark">Mini</a>
-										<a href="#" class="btn btn-dark">Maxi</a>
-									</div>
-								</div>
-							</div>
-							<div class="col tarjetas text-center">
-								<div class="card" style="width: 14rem;">
-									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h6 class="card-title">Bocata</h6>
-										<a href="#" class="btn btn-dark">Mini</a>
-										<a href="#" class="btn btn-dark">Maxi</a>
-									</div>
-								</div>
-							</div>
-							<div class="col tarjetas text-center">
-								<div class="card" style="width: 14rem;">
-									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h6 class="card-title">Bocata</h6>
-										<a href="#" class="btn btn-dark">Mini</a>
-										<a href="#" class="btn btn-dark">Maxi</a>
-									</div>
-								</div>
-							</div>
-							<div class="col tarjetas text-center">
-								<div class="card" style="width: 14rem;">
-									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h6 class="card-title">Bocata</h6>
-										<a href="#" class="btn btn-dark">Mini</a>
-										<a href="#" class="btn btn-dark">Maxi</a>
-									</div>
-								</div>
-							</div>
-							<div class="col tarjetas text-center">
-								<div class="card" style="width: 14rem;">
-									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h6 class="card-title">Bocata</h6>
-										<a href="#" class="btn btn-dark">Mini</a>
-										<a href="#" class="btn btn-dark">Maxi</a>
-									</div>
-								</div>
-							</div>
-							<div class="col tarjetas text-center">
-								<div class="card" style="width: 14rem;">
-									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h6 class="card-title">Bocata</h6>
-										<a href="#" class="btn btn-dark">Mini</a>
-										<a href="#" class="btn btn-dark">Maxi</a>
-									</div>
-								</div>
-							</div>
-							<div class="col tarjetas text-center">
-								<div class="card" style="width: 14rem;">
-									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h6 class="card-title">Bocata</h6>
-										<a href="#" class="btn btn-dark">Mini</a>
-										<a href="#" class="btn btn-dark">Maxi</a>
-									</div>
-								</div>
-							</div>
-							<div class="col tarjetas text-center">
-								<div class="card" style="width: 14rem;">
-									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
-									<div class="card-body">
-										<h6 class="card-title">Bocata</h6>
-										<a href="#" class="btn btn-dark">Mini</a>
-										<a href="#" class="btn btn-dark">Maxi</a>
-									</div>
-								</div>
-							</div>
+							<?php print $repository->drawProductCard($repository->getAllCategoryProduct($category)) ?>
 						</div>
 
 						<!-------paginado------->

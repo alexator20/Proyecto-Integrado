@@ -24,14 +24,34 @@ class productRepository extends Connection{
         return new Product(...$row);
     }
 
-    public function getAllCategoryProduct(string $category):array 
+    /* public function getAllCategoryProduct(string $categoria):array 
     {
-        $stmt = $this->conn->query("SELECT * FROM producto WHERE categoria = $category ORDER BY cod_producto DESC");
+        $stmt = $this->conn->query("SELECT * FROM producto WHERE categoria = $categoria ORDER BY cod_producto DESC");
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $data[] = new Product(...$row);
         }
         return $data;
+    } */
+
+    public function getAllCategoryProduct(string $category): array 
+    {
+    $data = [];
+    $stmt = $this->conn->prepare("SELECT * FROM producto WHERE categoria = :category ORDER BY cod_producto DESC");
+    $stmt->bindParam(':category', $category);
+    $stmt->execute();
+    $hola = 0;
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $data[] = new Product(...$row);
+
+        if ($hola > 4) {
+
+            break;
+        }
+        $hola++;
     }
+    return $data;
+    }
+
 
     public function drawProductCard(array $data):string {
 
@@ -39,12 +59,16 @@ class productRepository extends Connection{
         //bucle
         foreach ($data as $key) {
             $output .= "<div class='col tarjetas text-center'>";
-            $output .= "<div class='card' style='width: 14rem;'>";
-            $output .= "<img src='./Assets/imgs/productos/'".$key->getCategoria()."'/'".$key->getImagen()."'' class='card-img-top' alt=''".$key->getNombre()."''>";
+            $output .= "<div class='card' style='width: 14rem; height: 17rem;'>";
+            $output .= "<img src='./Assets/imgs/productos/".$key->getCategoria()."/".$key->getImagen()."' class='card-img-top' alt='".$key->getNombre()."'>";
             $output .= "<div class='card-body'>";
             $output .= "<h6 class='card-title'>".$key->getNombre()."</h6>";
-            $output .= "<a href='#/'".$key->getPrecio()."'' class='btn btn-dark'>Mini</a>";
-            $output .= "<a href='#/'".($key->getPrecio() + 1)."'' class='btn btn-dark'>Maxi</a>";
+            $output .= "<a href='/Código/index.php?categoria=".$key->getPrecio()."' class='btn btn-dark'>Mini</a>";
+            
+            if ($key->getCategoria() == "Bocadillos") {
+
+                $output .= "<a href='/Código/index.php?categoria=".($key->getPrecio()+1)."' class='btn btn-dark'>Maxi</a>";
+            }
             $output .= "</div></div></div>";
         }
 
