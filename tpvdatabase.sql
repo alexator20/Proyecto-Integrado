@@ -23,9 +23,9 @@ CREATE TABLE empleado (
 
 CREATE TABLE ticket(
     cod_ticket INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    hora INT NOT NULL, 
+    hora VARCHAR(20) NOT NULL, 
     fecha DATE NOT NULL,
-    num_mesa INT NOT NULL,
+    num_mesa VARCHAR(20) NOT NULL,
     cod_empleado INT,
     FOREIGN KEY (cod_empleado) REFERENCES empleado(cod_empleado)
 );
