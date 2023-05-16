@@ -50,11 +50,11 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tarta + Cafe',
 
 # CAFES E INFUSIONES
 
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Café solo', 1.20, "Cafes","cafe.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cafe solo', 1.20, "Cafes","cafe.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cortado', 1.30, "Cafes","cortado.jpeg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Americano', 1.40, "Cafes","americano.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Bombon', 1.50, "Cafes","bombon.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Café con leche', 1.60, "Cafes","cafeleche.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cafe con leche', 1.60, "Cafes","cafeleche.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Carajillo Marie brizard,terry, negrita', 1.60, "Cafes","carajillomarie.jpeg");
 INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'MANZANILLA PIRAMIDE ',1.60,"Cafes","manzanillapiramide.jpg");
 INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'MENTA-POLEO PIRAMIDE  ',1.60,"Cafes","mentapiramicd");
@@ -62,7 +62,7 @@ INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'TE VERDE GUNPOW
 
 # CERVEZAS
 
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Caña)', 1.40,"Cervezas", "cana.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Cana)', 1.40,"Cervezas", "cana.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Doble)', 1.90,"Cervezas","doble.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Tanque)', 2.90,"Cervezas", "tanque.png");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('San Miguel', 1.80,"Cervezas", "sanmiguel.jpg");
@@ -88,13 +88,13 @@ INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Tonica Schweppes'
 
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Cazalla Tenis', 1.10, "Licores","cazalla.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Barrejat (cazalla y mistela)', 1.20, "Licores","barrejat.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito Licor de hierbas, Arroz ó Negrita', 1.30, "Licores","licorhierbas.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito de Cutty Shark ó J&B', 1.70, "Licores","cuttyshark.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito de Jack D. ó Johnnie W. Red Label', 2.50, "Licores","redlabel.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa de Terry ó Ron Negrita', 1.70, "Licores","copaterry.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Pacharán Zoco ó Ponche Caballero', 1.70, "Licores","copapacharan.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito Licor de hierbas, Arroz o Negrita', 1.30, "Licores","licorhierbas.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito de Cutty Shark o J&B', 1.70, "Licores","cuttyshark.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito de Jack D. o Johnnie W. Red Label', 2.50, "Licores","redlabel.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa de Terry o Ron Negrita', 1.70, "Licores","copaterry.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Pacharán Zoco o Ponche Caballero', 1.70, "Licores","copapacharan.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Licor de Hierbas o Licor de Arroz', 1.70, "Licores","copalicorhierbas.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Cutty, J&B Ó Bourbon Four Roses', 2.80, "Licores","copacutty.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Cutty, J&B o Bourbon Four Roses', 2.80, "Licores","copacutty.jpg");
 
 
 # BOLLERIA 
@@ -123,7 +123,7 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Popular
 #BOCADILLOS
 
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tortilla de Patata',4.00,"Bocadillos","tortillapatata.jpeg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Revuelto del Huerto (Champiñon con Ajos Tiernos)',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Revuelto del Huerto (Champinon con Ajos Tiernos)',4.00,"Bocadillos","NULL");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Sobrasada con Queso y cebolla Caramelizada',4.00,"Bocadillos","sobrasada con queso y cebolla.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Jamon con Tomate',4.00,"Bocadillos","NULL");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Francesa con Jamon',4.00,"Bocadillos","NULL");
@@ -149,4 +149,6 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Albondigas de 
 # Empleados
 
 INSERT INTO empleado ( nombre, apellidos,contrasenya,root,correo,direccion,foto) VALUES ( 'David','Chirivella',123456,TRUE,"Dechiri224@hotmail.com","Avd Rambleta,11",'chirivella.jpg');
-INSERT INTO empleado ( nombre, apellidos,contrasenya,root,correo,direccion,foto) VALUES ( 'Andrés','Alguacil',654321,FALSE,"LilBokeron88@gmail.com","Plaza España,15",'andres.jpg');
+INSERT INTO empleado ( nombre, apellidos,contrasenya,root,correo,direccion,foto) VALUES ( 'Andres','Alguacil',654321,FALSE,"LilBokeron88@gmail.com","Plaza Espana,15",'andres.jpg');
+INSERT INTO empleado ( nombre, apellidos,contrasenya,root,correo,direccion,foto) VALUES ( 'Pepe','Gutierrez',774321,FALSE,"pepepalomo@gmail.com","Carrer Colom 20",'pepe.jpg');
+INSERT INTO empleado ( nombre, apellidos,contrasenya,root,correo,direccion,foto) VALUES ( 'Emilio','Herrera',664321,FALSE,"Emiliogherra@gmail.com","San vicente 24",'emilio.jpg');
