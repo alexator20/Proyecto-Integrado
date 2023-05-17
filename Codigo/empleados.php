@@ -6,8 +6,25 @@ $security->checkLoggedIn(); -->
 require_once __DIR__ . "/php/autoloader.php";
 $empleado = new Empleado();
 
-$conexion=mysqli_connect('localhost','root','','tpvdatabase')
+$conexion=mysqli_connect('localhost','root','','tpvdatabase');
 
+// Comprobar si se ha enviado el formulario de agregar empleado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obtener los datos del formulario
+    $nombre = $_POST['nombre'];
+    $apellidos = $_POST['apellidos'];
+    $correo = $_POST['correo'];
+    $direccion = $_POST['direccion'];
+
+    // Insertar el empleado en la base de datos
+    $sql = "INSERT INTO empleado (nombre, apellidos, correo, direccion) VALUES ('$nombre', '$apellidos', '$correo', '$direccion')";
+    mysqli_query($conexion, $sql);
+
+}
+// Obtener todos los empleados de la base de datos
+$sql = "SELECT nombre, apellidos, correo, direccion, foto FROM empleado";
+$result = mysqli_query($conexion, $sql);
+$empleados = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -71,25 +88,41 @@ $conexion=mysqli_connect('localhost','root','','tpvdatabase')
 						<td>Foto</td>
 					</tr>
 
-					<?php
-					$sql = "SELECT nombre, apellidos, correo, direccion, foto FROM empleado";
-					$result = mysqli_query($conexion, $sql);
-
-					while ($mostrar = mysqli_fetch_array($result)) {
-						?>
-						<tr>
-							<td><?php echo $mostrar['nombre'] ?></td>
-							<td><?php echo $mostrar['apellidos'] ?></td>
-							<td><?php echo $mostrar['correo'] ?></td>
-							<td><?php echo $mostrar['direccion'] ?></td>
-							<td><?php echo $mostrar['foto'] ?></td>
-						</tr>
-					<?php
-					}
+					<?php foreach ($empleados as $empleado) { ?>
+                                <tr>
+                                    <td><?php echo $empleado['nombre'] ?></td>
+                                    <td><?php echo $empleado['apellidos'] ?></td>
+                                    <td><?php echo $empleado['correo'] ?></td>
+                                    <td><?php echo $empleado['direccion'] ?></td>
+                                    <td><?php echo $empleado['foto'] ?></td>
+                                </tr>
+                    <?php 
+						} 
 					?>
 				</table>
-
-				</div>				
+				</div>
+				<!-- Formulario para agregar empleados -->
+				<div class="container">
+                        <h3>Agregar Empleado</h3>
+                <form method="post">
+                        <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                                <label for="apellidos" class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                        </div>
+                        <div class="mb-3">
+                                <label for="correo" class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="correo" name="correo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                </form>				
 			</div>
 		</div>
 	</div>
