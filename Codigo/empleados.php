@@ -1,9 +1,8 @@
-<!-- $security = new Security();
-//para comprobar si estas logeado
-$security->checkLoggedIn(); -->
-
 <?php
 require_once __DIR__ . "/php/autoloader.php";
+$security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn();
 $empleado = new Empleado();
 
 $conexion=mysqli_connect('localhost','root','','tpvdatabase');
@@ -20,13 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO empleado (nombre, apellidos, correo, direccion) VALUES ('$nombre', '$apellidos', '$correo', '$direccion')";
     mysqli_query($conexion, $sql);
 
-}
-// Obtener todos los empleados de la base de datos
-$sql = "SELECT nombre, apellidos, correo, direccion, foto FROM empleado";
-$result = mysqli_query($conexion, $sql);
-$empleados = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -54,10 +49,10 @@ $empleados = mysqli_fetch_all($result, MYSQLI_ASSOC);
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="index.html">INICIO</a>
+							<a class="nav-link active" aria-current="page" href="index.php">INICIO</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="empleados.html">EMPLEADOS</a>
+							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="register.php">LOGIN</a>
@@ -131,5 +126,3 @@ $empleados = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	<script src="./Assets/js/index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
-
-</html>
