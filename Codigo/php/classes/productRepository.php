@@ -36,18 +36,12 @@ class productRepository extends Connection{
     public function getAllCategoryProduct(string $category): array 
     {
     $data = [];
-    $stmt = $this->conn->prepare("SELECT * FROM producto WHERE categoria = :category ORDER BY cod_producto DESC");
+    $stmt = $this->conn->prepare("SELECT * FROM producto WHERE categoria = :category ORDER BY cod_producto ASC");
     $stmt->bindParam(':category', $category);
     $stmt->execute();
-    $hola = 0;
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $data[] = new Product(...$row);
 
-        if ($hola > 4) {
-
-            break;
-        }
-        $hola++;
     }
     return $data;
     }
@@ -60,14 +54,14 @@ class productRepository extends Connection{
         foreach ($data as $key) {
             $output .= "<div class='col tarjetas text-center'>";
             $output .= "<div class='card' style='width: 14rem; height: 17rem;'>";
-            $output .= "<img src='./Assets/imgs/productos/".$key->getCategoria()."/".$key->getImagen()."' class='card-img-top' alt='".$key->getNombre()."'>";
+            $output .= "<img src='./Assets/imgs/Imagenes_productos_TPV/".$key->getCategoria()."/".$key->getImagen()."' class='card-img-top' alt='".$key->getNombre()."'>";
             $output .= "<div class='card-body'>";
             $output .= "<h6 class='card-title'>".$key->getNombre()."</h6>";
-            $output .= "<a href='/Código/index.php?categoria=".$key->getPrecio()."' class='btn btn-dark'>Mini</a>";
+            $output .= "<a href='/Codigo/index.php?categoria=".$key->getPrecio()."' class='btn btn-dark'>Mini</a>";
             
             if ($key->getCategoria() == "Bocadillos") {
 
-                $output .= "<a href='/Código/index.php?categoria=".($key->getPrecio()+1)."' class='btn btn-dark'>Maxi</a>";
+                $output .= "<a href='/Codigo/index.php?categoria=".($key->getPrecio()+1)."' class='btn btn-dark'>Maxi</a>";
             }
             $output .= "</div></div></div>";
         }
