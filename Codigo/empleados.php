@@ -37,10 +37,10 @@ $conexion=mysqli_connect('localhost','root','','tpvdatabase')
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="index.html">INICIO</a>
+							<a class="nav-link active" aria-current="page" href="index.php">INICIO</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="empleados.html">EMPLEADOS</a>
+							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="register.php">LOGIN</a>
