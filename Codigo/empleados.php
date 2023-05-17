@@ -71,8 +71,7 @@ $conexion=mysqli_connect('localhost','root','','tpvdatabase')
 					<li style="margin-top: 30px;"><a href="">Licores</a></li>
 					<li style="margin-top: 30px;"><a href="">Bolleria</a></li>
 					<li style="margin-top: 30px;"><a href="">Tostadas</a></li>
-					<li style="margin-top: 30px;"><a href="">Bocadillos Frios</a></li>
-					<li style="margin-top: 30px;"><a href="">Bocadillos Calientes</a></li>
+					<li style="margin-top: 30px;"><a href="">Bocadillos</a></li>
 					<li style="margin-top: 30px;"><a href="">Tapas</a></li>
 				</ul>
 			</div>
