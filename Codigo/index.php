@@ -1,9 +1,9 @@
 <?php
 if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 require_once __DIR__ . "/php/autoloader.php";
-/* $security = new Security();
+$security = new Security();
 //para comprobar si estas logeado
-$security->checkLoggedIn(); */
+$security->checkLoggedIn();
 
 $category = isset($_SESSION["categoria"])? $_SESSION["categoria"] : "Cafes" ;
 $mesa = isset($_SESSION["mesa"])? $_SESSION["mesa"] : ""; 
@@ -11,12 +11,6 @@ $mesa = isset($_SESSION["mesa"])? $_SESSION["mesa"] : "";
 $repository = new productRepository;
 ?>
 
-<?php
-require_once __DIR__ . "/php/autoloader.php";
-$security = new Security();
-//para comprobar si estas logeado
-$security->checkLoggedIn();
-?>
 <!DOCTYPE html>
 <html lang="es">
 
