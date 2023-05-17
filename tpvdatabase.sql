@@ -1,246 +1,154 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2023 a las 09:18:13
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.1.17
+DROP DATABASE IF EXISTS tpvdatabase;
+CREATE DATABASE tpvdatabase;
+use tpvdatabase;
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+CREATE TABLE producto (
+    cod_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre CHAR(20) NOT NULL,
+    precio FLOAT (10,2) NOT NULL,
+    categoria CHAR(50) NOT NULL,
+    imagen varchar(50) NOT NULL
+);
+
+CREATE TABLE empleado (
+    cod_empleado INT  AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    nombre CHAR(20) NOT NULL,
+    apellidos CHAR(20) NOT NULL,
+    root BOOL NOT NULL,
+    correo CHAR(255) NOT NULL,
+    direccion CHAR(40),
+    contrasenya CHAR(20) NOT NULL,
+    foto VARCHAR(9999)
+);
+
+CREATE TABLE ticket(
+    cod_ticket INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    hora VARCHAR(20) NOT NULL, 
+    fecha DATE NOT NULL,
+    num_mesa VARCHAR(20) NOT NULL,
+    cod_empleado INT,
+    FOREIGN KEY (cod_empleado) REFERENCES empleado(cod_empleado)
+);
+
+CREATE TABLE producto_servido (
+	cantidad INT NOT NULL,
+	cod_producto INT NOT NULL,
+    cod_ticket INT NOT NULL,
+    PRIMARY KEY (cod_producto,cod_ticket),
+    FOREIGN KEY (cod_producto) REFERENCES producto(cod_producto),
+    FOREIGN KEY (cod_ticket) REFERENCES ticket(cod_ticket)
+);
+
+# OFERTAS Y COMBOS
+
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada + cafe/zumo',2.50,"Combos","combo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Curasan + cafe/zumo',2.50,"Combos","combo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada Especial + cafe/zumo',2.50,"Combos","combo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada + cafe + zumo',3.50,"Combos","combo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Gofre/Creppe + Cafe',3.50,"Combos","combo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tarta + Cafe',3.50,"Combos","combo.jpg");
+
+# CAFES E INFUSIONES
+
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cafe solo', 1.20, "Cafes","cafe.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cortado', 1.30, "Cafes","cortado.jpeg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Americano', 1.40, "Cafes","americano.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Bombon', 1.50, "Cafes","bombon.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cafe con leche', 1.60, "Cafes","cafeleche.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Carajillo Marie brizard,terry, negrita', 1.60, "Cafes","carajillomarie.jpeg");
+INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'MANZANILLA PIRAMIDE ',1.60,"Cafes","manzanillapiramide.jpg");
+INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'MENTA-POLEO PIRAMIDE  ',1.60,"Cafes","mentapiramicd");
+INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'TE VERDE GUNPOWDER  ',1.60,"Cafes","teverdegunpowder.jpg");
+
+# CERVEZAS
+
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Cana)', 1.40,"Cervezas", "cana.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Doble)', 1.90,"Cervezas","doble.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Tanque)', 2.90,"Cervezas", "tanque.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('San Miguel', 1.80,"Cervezas", "sanmiguel.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('San Miguel 0,0', 2.00,"Cervezas", "sanmiguel00.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Radler Cruzcampo', 2.00,"Cervezas", "radler.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Estrella Galicia', 2.00,"Cervezas", "galicia.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Heineken 0,0', 2.00,"Cervezas", "heineken00.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Turia', 2.00,"Cervezas", "turia.jpg");
+
+# REFRESCOS
+
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola', 2.00,"Refrescos", "cola.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero', 2.00,"Refrescos", "cocazero.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero Zero', 2.00,"Refrescos", "cocazerozero.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Acuarius Naranja', 2.00,"Refrescos", "acuariusnaranja.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Acuarius Limon', 2.00,"Refrescos", "acuariuslimon.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Fanta Naranja', 2.00,"Refrescos", "fantalimon.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Fanta Limon', 2.00,"Refrescos", "fantanaranja.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Trina de Naranja', 2.00,"Refrescos", "trinanaranja.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Tonica Schweppes', 2.00,"Refrescos", "tonica.png");
+
+#LICORES
+
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Cazalla Tenis', 1.10, "Licores","cazalla.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Barrejat (cazalla y mistela)', 1.20, "Licores","barrejat.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito Licor de hierbas, Arroz o Negrita', 1.30, "Licores","licorhierbas.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito de Cutty Shark o J&B', 1.70, "Licores","cuttyshark.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito de Jack D. o Johnnie W. Red Label', 2.50, "Licores","redlabel.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa de Terry o Ron Negrita', 1.70, "Licores","copaterry.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Pacharán Zoco o Ponche Caballero', 1.70, "Licores","copapacharan.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Licor de Hierbas o Licor de Arroz', 1.70, "Licores","copalicorhierbas.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Cutty, J&B o Bourbon Four Roses', 2.80, "Licores","copacutty.jpg");
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+# BOLLERIA 
 
---
--- Base de datos: `tpvdatabase`
---
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Mini', 0.60, "Bolleria","croissant.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Mini Choco', 0.60, "Bolleria","croissant.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Grande', 1.50, "Bolleria","croissant.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Napolitana York Queso', 1.60, "Bolleria","croissant.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Napolitana Chocolate', 1.60, "Bolleria","croissant.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Pisto', 1.60, "Bolleria","croissant.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Magdalena', 1.00, "Bolleria","croissant.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Donut', 1.10, "Bolleria","croissant.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Rosquilletas', 1.20, "Bolleria","croissant.jpg");
 
--- --------------------------------------------------------
+#TOSTADAS
 
---
--- Estructura de tabla para la tabla `empleado`
---
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Aceite',2.50,"Tostadas","tostadaaceite.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Mantequilla',2.50,"Tostadas","tostadasmantequilla.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate',2.50,"Tostadas","tostadatomate.png");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate y Queso Fresco',3.50,"Tostadas","photo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate y Jamon',3.50,"Tostadas","photo2.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Sobrasada y Queso',3.50,"Tostadas","photo3.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate Aguacate y Queso Fresco',3.50,"Tostadas","photo4.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Popular',3.50,"Tostadas","photo5.jpg");
 
-CREATE TABLE `empleado` (
-  `cod_empleado` int(11) NOT NULL,
-  `nombre` char(20) NOT NULL,
-  `apellidos` char(20) NOT NULL,
-  `root` tinyint(1) NOT NULL,
-  `correo` char(255) NOT NULL,
-  `direccion` char(40) DEFAULT NULL,
-  `contrasenya` char(20) NOT NULL,
-  `foto` varchar(9999) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+#BOCADILLOS
 
---
--- Volcado de datos para la tabla `empleado`
---
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tortilla de Patata',4.00,"Bocadillos","tortillapatata.jpeg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Revuelto del Huerto (Champinon con Ajos Tiernos)',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Sobrasada con Queso y cebolla Caramelizada',4.00,"Bocadillos","sobrasada con queso y cebolla.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Jamon con Tomate',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Francesa con Jamon',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Francesa con Sobrasada',4.00,"Bocadillos","francesa con sobrasada.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Atun con Olivas',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Pechuga y Queso',4.00,"Bocadillos","pechuga y queso.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Chistorra con patatas y huevo',4.50,"Bocadillos","chistorrapatata.jpg");
 
-INSERT INTO `empleado` (`cod_empleado`, `nombre`, `apellidos`, `root`, `correo`, `direccion`, `contrasenya`, `foto`) VALUES
-(1, 'David', 'Chirivella', 1, 'Dechiri224@hotmail.com', 'Avd Rambleta,11', '123456', 'foto.jpg'),
-(2, 'Andres', 'Alguacil', 0, 'LilBokeron88@gmail.com', 'Plaza Espana,15', '654321', 'andres.jpg'),
-(3, 'Pepe', 'Gutierrez', 0, 'pepepalomo@gmail.com', 'Carrer Colom 20', '774321', 'pepe.jpg'),
-(4, 'Emilio', 'Herrera', 0, 'Emiliogherra@gmail.com', 'San vicente 24', '664321', 'emilio.jpg');
+#TAPAS 
 
--- --------------------------------------------------------
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Pincho de Tortilla',3.50,"Tapas","tapa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Habas Picantonas',3.50,"Tapas","tapa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Mollejitas Morunas',3.50,"Tapas","tapa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Esgarraet o Ajoarriero',3.50,"Tapas","tapa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Bravas',3.50,"Tapas","tapa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Morro',3.50,"Tapas","tapa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Oreja Adobada',3.50,"Tapas","tapa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Ensaladilla Rusa',3.50,"Tapas","tapa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Albondigas de "La abuela"',3.50,"Tapas","tapa.jpg");
 
---
--- Estructura de tabla para la tabla `producto`
---
 
-CREATE TABLE `producto` (
-  `cod_producto` int(11) NOT NULL,
-  `nombre` char(20) NOT NULL,
-  `precio` float(10,2) NOT NULL,
-  `categoria` char(50) NOT NULL,
-  `imagen` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Volcado de datos para la tabla `producto`
---
+# Empleados
 
-INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`, `categoria`, `imagen`) VALUES
-(1, 'Tostada + cafe/zumo', 2.50, 'Combos', 'combo.jpg'),
-(2, 'Curasan + cafe/zumo', 2.50, 'Combos', 'combo.jpg'),
-(3, 'Tostada Especial + c', 2.50, 'Combos', 'combo.jpg'),
-(4, 'Tostada + cafe + zum', 3.50, 'Combos', 'combo.jpg'),
-(5, 'Gofre/Creppe + Cafe', 3.50, 'Combos', 'combo.jpg'),
-(6, 'Tarta + Cafe', 3.50, 'Combos', 'combo.jpg'),
-(7, 'Cafe solo', 1.20, 'Cafes', 'cafe.jpg'),
-(8, 'Cortado', 1.30, 'Cafes', 'cortado.jpeg'),
-(9, 'Americano', 1.40, 'Cafes', 'americano.jpg'),
-(10, 'Bombon', 1.50, 'Cafes', 'bombon.jpg'),
-(11, 'Cafe con leche', 1.60, 'Cafes', 'cafeleche.jpg'),
-(12, 'Carajillo Marie briz', 1.60, 'Cafes', 'carajillomarie.jpeg'),
-(13, 'MANZANILLA PIRAMIDE', 1.60, 'Cafes', 'manzanillapiramide.jpg'),
-(14, 'MENTA-POLEO PIRAMIDE', 1.60, 'Cafes', 'mentapiramicd'),
-(15, 'TE VERDE GUNPOWDER', 1.60, 'Cafes', 'teverdegunpowder.jpg'),
-(16, 'Cruzcampo (Cana)', 1.40, 'Cervezas', 'cana.jpg'),
-(17, 'Cruzcampo (Doble)', 1.90, 'Cervezas', 'doble.jpg'),
-(18, 'Cruzcampo (Tanque)', 2.90, 'Cervezas', 'tanque.png'),
-(19, 'San Miguel', 1.80, 'Cervezas', 'sanmiguel.jpg'),
-(20, 'San Miguel 0,0', 2.00, 'Cervezas', 'sanmiguel00.jpg'),
-(21, 'Radler Cruzcampo', 2.00, 'Cervezas', 'radler.jpg'),
-(22, 'Estrella Galicia', 2.00, 'Cervezas', 'galicia.png'),
-(23, 'Heineken 0,0', 2.00, 'Cervezas', 'heineken00.png'),
-(24, 'Turia', 2.00, 'Cervezas', 'turia.jpg'),
-(25, 'Cocacola', 2.00, 'Refrescos', 'cola.jpg'),
-(26, 'Cocacola Zero', 2.00, 'Refrescos', 'cocazero.png'),
-(27, 'Cocacola Zero Zero', 2.00, 'Refrescos', 'cocazerozero.jpg'),
-(28, 'Acuarius Naranja', 2.00, 'Refrescos', 'acuariusnaranja.jpg'),
-(29, 'Acuarius Limon', 2.00, 'Refrescos', 'acuariuslimon.jpg'),
-(30, 'Fanta Naranja', 2.00, 'Refrescos', 'fantalimon.jpg'),
-(31, 'Fanta Limon', 2.00, 'Refrescos', 'fantanaranja.jpg'),
-(32, 'Trina de Naranja', 2.00, 'Refrescos', 'trinanaranja.jpg'),
-(33, 'Tonica Schweppes', 2.00, 'Refrescos', 'tonica.png'),
-(34, 'Cazalla Tenis', 1.10, 'Licores', 'cazalla.jpg'),
-(35, 'Barrejat (cazalla y', 1.20, 'Licores', 'barrejat.jpg'),
-(36, 'Chupito Licor de hie', 1.30, 'Licores', 'licorhierbas.jpg'),
-(37, 'Chupito de Cutty Sha', 1.70, 'Licores', 'cuttyshark.jpg'),
-(38, 'Chupito de Jack D. o', 2.50, 'Licores', 'redlabel.jpg'),
-(39, 'Copa de Terry o Ron', 1.70, 'Licores', 'copaterry.jpg'),
-(40, 'Copa Pacharán Zoco o', 1.70, 'Licores', 'copapacharan.jpg'),
-(41, 'Copa Licor de Hierba', 1.70, 'Licores', 'copalicorhierbas.jpg'),
-(42, 'Copa Cutty, J&B o Bo', 2.80, 'Licores', 'copacutty.jpg'),
-(43, 'Curasan Mini', 0.60, 'Bolleria', 'croissant.jpg'),
-(44, 'Curasan Mini Choco', 0.60, 'Bolleria', 'croissant.jpg'),
-(45, 'Curasan Grande', 1.50, 'Bolleria', 'croissant.jpg'),
-(46, 'Napolitana York Ques', 1.60, 'Bolleria', 'croissant.jpg'),
-(47, 'Napolitana Chocolate', 1.60, 'Bolleria', 'croissant.jpg'),
-(48, 'Pisto', 1.60, 'Bolleria', 'croissant.jpg'),
-(49, 'Magdalena', 1.00, 'Bolleria', 'croissant.jpg'),
-(50, 'Donut', 1.10, 'Bolleria', 'croissant.jpg'),
-(51, 'Rosquilletas', 1.20, 'Bolleria', 'croissant.jpg'),
-(52, 'Tostada Aceite', 2.50, 'Tostadas', 'tostadaaceite.jpg'),
-(53, 'Tostada Mantequilla', 2.50, 'Tostadas', 'tostadasmantequilla.jpg'),
-(54, 'Tostada Tomate', 2.50, 'Tostadas', 'tostadatomate.png'),
-(55, 'Tostada Tomate y Que', 3.50, 'Tostadas', 'photo.jpg'),
-(56, 'Tostada Tomate y Jam', 3.50, 'Tostadas', 'photo2.jpg'),
-(57, 'Tostada Sobrasada y', 3.50, 'Tostadas', 'photo3.jpg'),
-(58, 'Tostada Tomate Aguac', 3.50, 'Tostadas', 'photo4.jpg'),
-(59, 'Tostada Popular', 3.50, 'Tostadas', 'photo5.jpg'),
-(60, 'Tortilla de Patata', 4.00, 'Bocadillos', 'tortillapatata.jpeg'),
-(61, 'Revuelto del Huerto', 4.00, 'Bocadillos', 'NULL'),
-(62, 'Sobrasada con Queso', 4.00, 'Bocadillos', 'sobrasada con queso y cebolla.jpg'),
-(63, 'Jamon con Tomate', 4.00, 'Bocadillos', 'NULL'),
-(64, 'Francesa con Jamon', 4.00, 'Bocadillos', 'NULL'),
-(65, 'Francesa con Sobrasa', 4.00, 'Bocadillos', 'francesa con sobrasada.jpg'),
-(66, 'Atun con Olivas', 4.00, 'Bocadillos', 'NULL'),
-(67, 'Pechuga y Queso', 4.00, 'Bocadillos', 'pechuga y queso.jpg'),
-(68, 'Chistorra con patata', 4.50, 'Bocadillos', 'chistorrapatata.jpg'),
-(69, 'Pincho de Tortilla', 3.50, 'Tapas', 'tapa.jpg'),
-(70, 'Habas Picantonas', 3.50, 'Tapas', 'tapa.jpg'),
-(71, 'Mollejitas Morunas', 3.50, 'Tapas', 'tapa.jpg'),
-(72, 'Esgarraet o Ajoarrie', 3.50, 'Tapas', 'tapa.jpg'),
-(73, 'Bravas', 3.50, 'Tapas', 'tapa.jpg'),
-(74, 'Morro', 3.50, 'Tapas', 'tapa.jpg'),
-(75, 'Oreja Adobada', 3.50, 'Tapas', 'tapa.jpg'),
-(76, 'Ensaladilla Rusa', 3.50, 'Tapas', 'tapa.jpg'),
-(77, 'Albondigas de \"La ab', 3.50, 'Tapas', 'tapa.jpg');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `producto_servido`
---
-
-CREATE TABLE `producto_servido` (
-  `cantidad` int(11) NOT NULL,
-  `cod_producto` int(11) NOT NULL,
-  `cod_ticket` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `ticket`
---
-
-CREATE TABLE `ticket` (
-  `cod_ticket` int(11) NOT NULL,
-  `hora` varchar(20) NOT NULL,
-  `fecha` date NOT NULL,
-  `num_mesa` varchar(20) NOT NULL,
-  `cod_empleado` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `empleado`
---
-ALTER TABLE `empleado`
-  ADD PRIMARY KEY (`cod_empleado`);
-
---
--- Indices de la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD PRIMARY KEY (`cod_producto`);
-
---
--- Indices de la tabla `producto_servido`
---
-ALTER TABLE `producto_servido`
-  ADD PRIMARY KEY (`cod_producto`,`cod_ticket`),
-  ADD KEY `cod_ticket` (`cod_ticket`);
-
---
--- Indices de la tabla `ticket`
---
-ALTER TABLE `ticket`
-  ADD PRIMARY KEY (`cod_ticket`),
-  ADD KEY `cod_empleado` (`cod_empleado`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `empleado`
---
-ALTER TABLE `empleado`
-  MODIFY `cod_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `producto`
---
-ALTER TABLE `producto`
-  MODIFY `cod_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
-
---
--- AUTO_INCREMENT de la tabla `ticket`
---
-ALTER TABLE `ticket`
-  MODIFY `cod_ticket` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `producto_servido`
---
-ALTER TABLE `producto_servido`
-  ADD CONSTRAINT `producto_servido_ibfk_1` FOREIGN KEY (`cod_producto`) REFERENCES `producto` (`cod_producto`),
-  ADD CONSTRAINT `producto_servido_ibfk_2` FOREIGN KEY (`cod_ticket`) REFERENCES `ticket` (`cod_ticket`);
-
---
--- Filtros para la tabla `ticket`
---
-ALTER TABLE `ticket`
-  ADD CONSTRAINT `ticket_ibfk_1` FOREIGN KEY (`cod_empleado`) REFERENCES `empleado` (`cod_empleado`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO empleado ( nombre, apellidos,contrasenya,root,correo,direccion,foto) VALUES ( 'David','Chirivella',123456,TRUE,"Dechiri224@hotmail.com","Avd Rambleta,11",'chirivella.jpg');
+INSERT INTO empleado ( nombre, apellidos,contrasenya,root,correo,direccion,foto) VALUES ( 'Andres','Alguacil',654321,FALSE,"LilBokeron88@gmail.com","Plaza Espana,15",'andres.jpg');
+INSERT INTO empleado ( nombre, apellidos,contrasenya,root,correo,direccion,foto) VALUES ( 'Pepe','Gutierrez',774321,FALSE,"pepepalomo@gmail.com","Carrer Colom 20",'pepe.jpg');
+INSERT INTO empleado ( nombre, apellidos,contrasenya,root,correo,direccion,foto) VALUES ( 'Emilio','Herrera',664321,FALSE,"Emiliogherra@gmail.com","San vicente 24",'emilio.jpg');

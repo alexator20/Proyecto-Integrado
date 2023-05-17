@@ -78,9 +78,9 @@ $conexion=mysqli_connect('localhost','root','','tpvdatabase')
 			<!-- CENTRO -->
 			
 			<div class="col-10">
-			<div class="container-fluid d-flex justify-content-center">
-				<table class="text-center">
-					<tr class="cabeceraTabla">
+				<div class="container-fluid">
+				<table>
+					<tr>
 						<td>Nombre</td>
 						<td>Apellidos</td>
 						<td>Correo</td>

@@ -234,22 +234,11 @@ tr{
   text-align: center;
   margin: 20px;
   padding: 20px;
-  border: 1px solid black;
 }
 
 td{
   text-align: center;
-  margin: 35px;
-  padding: 35px;
+  margin: 20px;
+  padding: 20px;
 
 }
-
-.cabeceraTabla{
-  background-color: #252525;
-  color: white;
-
-}
-
-table{
-  margin-top: 110px;
-} 
