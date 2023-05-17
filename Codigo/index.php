@@ -84,7 +84,17 @@ $repository = new productRepository;
 				<div class="col-xxl-8 col-lg-10" style="border-right:2px solid black;">
 					<div class="container text-center">
 						<div class="row text-center ">
-							<h1> Selecciona Numero de Mesa </h1>
+						<?php
+							if ($mesa == "") {
+
+								print "<h1> Selecciona un numero de Mesa</h1>";
+								
+							}else {
+								print "<h2>MESA $mesa</h2>";
+								print $repository->drawProductCard($repository->getAllCategoryProduct($category));
+							}
+								
+						?>
 						</div>
 					</div>
 				</div>
