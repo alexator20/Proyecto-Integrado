@@ -39,7 +39,7 @@ $security->doLogin();
                     <input type="password" name="password"  minlength="6" maxlength="20" value="" required>
                 </label>
                 <a href="./forgot.php"><p class="forgot-pass">Forgot password?</p></a>
-                <input type="submit" class="submit" value="Sign In">
+                <button type="submit" class="submit" value="Sign In">Sign In</button>
             </form>
         </div>
         <div class="sub-cont">
