@@ -1,3 +1,9 @@
+<?php
+require_once __DIR__ . "/php/autoloader.php";
+$security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
