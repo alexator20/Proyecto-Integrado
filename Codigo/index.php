@@ -1,3 +1,16 @@
+<?php
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+require_once __DIR__ . "/php/autoloader.php";
+/* $security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn(); */
+
+$category = isset($_SESSION["categoria"])? $_SESSION["categoria"] : "Cafes" ;
+$mesa = isset($_SESSION["mesa"])? $_SESSION["mesa"] : ""; 
+
+$repository = new productRepository;
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -29,7 +42,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="index.php">INICIO</a>
+							<a class="nav-link active" aria-current="page" href="mesa.php">INICIO</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
@@ -56,22 +69,32 @@
 				<!-- LATERAL -->
 				<div class="col-2 mesa bg-dark lateral2 lateral text-center">
 					<ul>
-						<li style="margin-top: 30px;"><a href="./ofertas.html">Ofertas y Combos</a></li>
-						<li style="margin-top: 30px;"><a href="./cafes.html">Cafes e Infusiones</a></li>
-						<li style="margin-top: 30px;"><a href="./cervezas.html">Cervezas</a></li>
-						<li style="margin-top: 30px;"><a href="./refrescos.html">Refrescos</a></li>
-						<li style="margin-top: 30px;"><a href="./licores.html">Licores</a></li>
-						<li style="margin-top: 30px;"><a href="./bolleria.html">Bolleria</a></li>
-						<li style="margin-top: 30px;"><a href="./tostadas.html">Tostadas</a></li>
-						<li style="margin-top: 30px;"><a href="./bocadillos.html">Bocadillos </a></li>
-						<li style="margin-top: 30px;"><a href="./tapas.html">Tapas</a></li>
+						<li style="margin-top: 30px;"><a href="/Codigo/categoria.php?categoria=Combos">Ofertas y Combos</a></li>
+						<li style="margin-top: 30px;"><a href="/Codigo/categoria.php?categoria=Cafes">Cafes e Infusiones</a></li>
+						<li style="margin-top: 30px;"><a href="/Codigo/categoria.php?categoria=Cervezas">Cervezas</a></li>
+						<li style="margin-top: 30px;"><a href="/Codigo/categoria.php?categoria=Refrescos">Refrescos</a></li>
+						<li style="margin-top: 30px;"><a href="/Codigo/categoria.php?categoria=Licores">Licores</a></li>
+						<li style="margin-top: 30px;"><a href="/Codigo/categoria.php?categoria=Bolleria">Bolleria</a></li>
+						<li style="margin-top: 30px;"><a href="/Codigo/categoria.php?categoria=Tostadas">Tostadas</a></li>
+						<li style="margin-top: 30px;"><a href="/Codigo/categoria.php?categoria=Bocadillos">Bocadillos </a></li>
+						<li style="margin-top: 30px;"><a href="/Codigo/categoria.php?categoria=Tapas">Tapas</a></li>
 					</ul>
 				</div>
 				<!-- CENTRO -->
 				<div class="col-xxl-8 col-lg-10" style="border-right:2px solid black;">
 					<div class="container text-center">
 						<div class="row text-center ">
-							<h1> Selecciona Numero de Mesa </h1>
+							<?php
+							if ($mesa == "") {
+
+								print "<h1> Selecciona un numero de Mesa</h1>";
+								
+							}else {
+								print "<h2>MESA $mesa</h2>";
+								print $repository->drawProductCard($repository->getAllCategoryProduct($category));
+							}
+								
+							?>
 						</div>
 					</div>
 				</div>
@@ -84,73 +107,73 @@
 							<p> Mesas </p>
 						</div>
 						<div class="col-2 offset-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/1.png" alt="mesa 1"> </a>
+							<a href="/Codigo/mesa.php?mesa=1t"> <img src="./Assets/imgs/mesas/1.png" alt="mesa 1t"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/3.png" alt="mesa 3"> </a>
+							<a href="/Codigo/mesa.php?mesa=3t"> <img src="./Assets/imgs/mesas/3.png" alt="mesa 3t"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/5.png" alt="mesa 5"> </a>
+							<a href="/Codigo/mesa.php?mesa=5t"> <img src="./Assets/imgs/mesas/5.png" alt="mesa 5t"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/7.png" alt="mesa 47"> </a>
+							<a href="/Codigo/mesa.php?mesa=7t"> <img src="./Assets/imgs/mesas/7.png" alt="mesa 7t"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/9.png" alt="mesa 9"> </a>
+							<a href="/Codigo/mesa.php?mesa=9t"> <img src="./Assets/imgs/mesas/9.png" alt="mesa 9t"> </a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-2 offset-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/2.png" alt="mesa 2"> </a>
+							<a href="/Codigo/mesa.php?mesa=2t"> <img src="./Assets/imgs/mesas/2.png" alt="mesa 2t"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/4.png" alt="mesa 4"> </a>
+							<a href="/Codigo/mesa.php?mesa=4t"> <img src="./Assets/imgs/mesas/4.png" alt="mesa 4t"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/6.png" alt="mesa 6"> </a>
+							<a href="/Codigo/mesa.php?mesa=6t"> <img src="./Assets/imgs/mesas/6.png" alt="mesa 6t"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/8.png" alt="mesa 8"> </a>
+							<a href="/Codigo/mesa.php?mesa=8t"> <img src="./Assets/imgs/mesas/8.png" alt="mesa 8t"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/10.png" alt="mesa 10"> </a>
+							<a href="/Codigo/mesa.php?mesa=10t"> <img src="./Assets/imgs/mesas/10.png" alt="mesa 10t"> </a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-2 offset-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/1.png" alt="mesa 1"> </a>
+							<a href="/Codigo/mesa.php?mesa=1"> <img src="./Assets/imgs/mesas/1.png" alt="mesa 1"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/2.png" alt="mesa 2"> </a>
+							<a href="/Codigo/mesa.php?mesa=2"> <img src="./Assets/imgs/mesas/2.png" alt="mesa 2"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/3.png" alt="mesa 3"> </a>
+							<a href="/Codigo/mesa.php?mesa=3"> <img src="./Assets/imgs/mesas/3.png" alt="mesa 3"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/4.png" alt="mesa 4"> </a>
+							<a href="/Codigo/mesa.php?mesa=4"> <img src="./Assets/imgs/mesas/4.png" alt="mesa 4"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/5.png" alt="mesa 5"> </a>
+							<a href="/Codigo/mesa.php?mesa=5"> <img src="./Assets/imgs/mesas/5.png" alt="mesa 5"> </a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-2 offset-8 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/6.png" alt="mesa 6"> </a>
+							<a href="/Codigo/mesa.php?mesa=6"> <img src="./Assets/imgs/mesas/6.png" alt="mesa 6"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/7.png" alt="mesa 7"> </a>
+							<a href="/Codigo/mesa.php?mesa=7"> <img src="./Assets/imgs/mesas/7.png" alt="mesa 7"> </a>
 						</div>
 						<div class="col-2 offset-8 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/8.png" alt="mesa 8"> </a>
+							<a href="/Codigo/mesa.php?mesa=8"> <img src="./Assets/imgs/mesas/8.png" alt="mesa 8"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/9.png" alt="mesa 9"> </a>
+							<a href="/Codigo/mesa.php?mesa=9"> <img src="./Assets/imgs/mesas/9.png" alt="mesa 9"> </a>
 						</div>
 						<div class="col-2 offset-8 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/10.png" alt="mesa 10"> </a>
+							<a href="/Codigo/mesa.php?mesa=10"> <img src="./Assets/imgs/mesas/10.png" alt="mesa 10"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href=""> <img src="./Assets/imgs/mesas/11.png" alt="mesa 11"> </a>
+							<a href="/Codigo/mesa.php?mesa=11"> <img src="./Assets/imgs/mesas/11.png" alt="mesa 11"> </a>
 						</div>
 					</div>
 					<!-- Ticket -->
