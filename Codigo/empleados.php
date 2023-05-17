@@ -55,27 +55,17 @@ $security->checkLoggedIn();
 
 	<!-- MAIN -->
 	<main class="vh-100">
-		<div class="container-fluid ">
-			<div class="row text-center vh-100">
-				<!-- LATERAL -->
-				<div class="col-2 mesa bg-dark lateral2 lateral text-center">
-					<ul>
-						<li style="margin-top: 30px;"><a href="">Ofertas y Combos</a></li>
-						<li style="margin-top: 30px;"><a href="">Cafes e Infusiones</a></li>
-						<li style="margin-top: 30px;"><a href="">Cervezas</a></li>
-						<li style="margin-top: 30px;"><a href="">Refrescos</a></li>
-						<li style="margin-top: 30px;"><a href="">Licores</a></li>
-						<li style="margin-top: 30px;"><a href="">Bolleria</a></li>
-						<li style="margin-top: 30px;"><a href="">Tostadas</a></li>
-						<li style="margin-top: 30px;"><a href="">Bocadillos Frios</a></li>
-						<li style="margin-top: 30px;"><a href="">Bocadillos Calientes</a></li>
-						<li style="margin-top: 30px;"><a href="">Tapas</a></li>
-					</ul>
-				</div>
-				<!-- CENTRO -->
-				<?php $empleado->getAllEmpleados() ?>
-
-
+	<div class="container-fluid">
+			<div class="col-12">
+			<div class="container-fluid d-flex justify-content-center">
+				<table>
+					<tr class="headerTabla">
+						<td>Nombre</td>
+						<td>Apellidos</td>
+						<td>Correo</td>
+						<td>Direccion</td>
+						<td>Foto</td>
+					</tr>
 
 
 
