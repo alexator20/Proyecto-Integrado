@@ -1,11 +1,15 @@
+<!-- $security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn(); -->
+
 <?php
 require_once __DIR__ . "/php/autoloader.php";
-$security = new Security();
-//para comprobar si estas logeado
-$security->checkLoggedIn();
-//$empleado = new Empleado();
-?>
+$empleado = new Empleado();
 
+$conexion=mysqli_connect('localhost','root','','tpvdatabase')
+
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -67,11 +71,30 @@ $security->checkLoggedIn();
 						<td>Foto</td>
 					</tr>
 
+					<?php
+					$sql = "SELECT nombre, apellidos, correo, direccion, foto FROM empleado";
+					$result = mysqli_query($conexion, $sql);
 
+					while ($mostrar = mysqli_fetch_array($result)) {
+						?>
+						<tr>
+							<td><?php echo $mostrar['nombre'] ?></td>
+							<td><?php echo $mostrar['apellidos'] ?></td>
+							<td><?php echo $mostrar['correo'] ?></td>
+							<td><?php echo $mostrar['direccion'] ?></td>
+							<td><?php echo $mostrar['foto'] ?></td>
+						</tr>
+					<?php
+					}
+					?>
+				</table>
 
+				</div>				
 			</div>
 		</div>
-	</main>
+	</div>
+</main>
+
 	<script src="./Assets/js/index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

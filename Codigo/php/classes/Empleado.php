@@ -1,26 +1,9 @@
 <?php
 
 class Empleado extends Connection{
-    
-    private int $cod_empleado;
-    private string $nombre;
-    private string $apellidos;
-    private int $root;
-    private string $correo;
-    private string $direccion;
-    private string $contrasenya;
-    private string $foto;
 
-    public function __construct(int $cod_empleado, string $nombre, string $apellidos, int $root, string $correo, string $direccion, string $contrasenya,string $foto)
+    public function __construct()
     {
-        $this->cod_empleado = $cod_empleado;
-        $this->nombre = $nombre;
-        $this->apellidos = $apellidos;
-        $this->root = $root;
-        $this->correo = $correo;
-        $this->direccion = $direccion;
-        $this->contrasenya = $contrasenya;
-        $this->foto = $foto;
         $this->connect();
     }
 
@@ -39,14 +22,5 @@ class Empleado extends Connection{
         die; */
 
         $this->conn->query($sql);
-    }
-
-    public function getAllEmpleados():array 
-    {
-        $stmt = $this->conn->query("SELECT * FROM empleados");
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $data[] = new Empleado(...$row);
-        }
-        return $data;
     }
 }
