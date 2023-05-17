@@ -1,12 +1,9 @@
-<<<<<<<< HEAD:Codigo/index.html
-========
 <?php
 require_once __DIR__ . "/php/autoloader.php";
 $security = new Security();
 //para comprobar si estas logeado
 $security->checkLoggedIn();
 ?>
->>>>>>>> infoEmpleados:Codigo/caja.php
 <!DOCTYPE html>
 <html lang="es">
 
@@ -77,10 +74,120 @@ $security->checkLoggedIn();
 					</ul>
 				</div>
 				<!-- CENTRO -->
+				<div class="col-xxl-8 col-lg-10" style="border-right:2px solid black;">
+					<div class="container text-center">
+						<div class="row text-center">
+							<div class="col tarjetas text-center">
+								<div class="card" style="width: 14rem;">
+									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h6 class="card-title">Bocata</h6>
+										<a href="#" class="btn btn-dark">Mini</a>
+										<a href="#" class="btn btn-dark">Maxi</a>
+									</div>
+								</div>
+							</div>
+							<div class="col tarjetas text-center">
+								<div class="card" style="width: 14rem;">
+									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h6 class="card-title">Bocata</h6>
+										<a href="#" class="btn btn-dark">Mini</a>
+										<a href="#" class="btn btn-dark">Maxi</a>
+									</div>
+								</div>
+							</div>
+							<div class="col tarjetas text-center">
+								<div class="card" style="width: 14rem;">
+									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h6 class="card-title">Bocata</h6>
+										<a href="#" class="btn btn-dark">Mini</a>
+										<a href="#" class="btn btn-dark">Maxi</a>
+									</div>
+								</div>
+							</div>
+							<div class="col tarjetas text-center">
+								<div class="card" style="width: 14rem;">
+									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h6 class="card-title">Bocata</h6>
+										<a href="#" class="btn btn-dark">Mini</a>
+										<a href="#" class="btn btn-dark">Maxi</a>
+									</div>
+								</div>
+							</div>
+							<div class="col tarjetas text-center">
+								<div class="card" style="width: 14rem;">
+									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h6 class="card-title">Bocata</h6>
+										<a href="#" class="btn btn-dark">Mini</a>
+										<a href="#" class="btn btn-dark">Maxi</a>
+									</div>
+								</div>
+							</div>
+							<div class="col tarjetas text-center">
+								<div class="card" style="width: 14rem;">
+									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h6 class="card-title">Bocata</h6>
+										<a href="#" class="btn btn-dark">Mini</a>
+										<a href="#" class="btn btn-dark">Maxi</a>
+									</div>
+								</div>
+							</div>
+							<div class="col tarjetas text-center">
+								<div class="card" style="width: 14rem;">
+									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h6 class="card-title">Bocata</h6>
+										<a href="#" class="btn btn-dark">Mini</a>
+										<a href="#" class="btn btn-dark">Maxi</a>
+									</div>
+								</div>
+							</div>
+							<div class="col tarjetas text-center">
+								<div class="card" style="width: 14rem;">
+									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h6 class="card-title">Bocata</h6>
+										<a href="#" class="btn btn-dark">Mini</a>
+										<a href="#" class="btn btn-dark">Maxi</a>
+									</div>
+								</div>
+							</div>
+							<div class="col tarjetas text-center">
+								<div class="card" style="width: 14rem;">
+									<img src="./Assets/imgs/mesas/bocata.jpeg" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h6 class="card-title">Bocata</h6>
+										<a href="#" class="btn btn-dark">Mini</a>
+										<a href="#" class="btn btn-dark">Maxi</a>
+									</div>
+								</div>
+							</div>
+						</div>
 
-				<div class="col-xxl-8 col-lg-10 centro ">
-					<h1> Selecciona numero de Mesa </h1>
+						<!-------paginado------->
+
+						<nav aria-label="Page navigation example">
+							<ul class="pagination justify-content-end">
+								<li class="page-item disabled">
+									<a class="page-link">Anterior</a>
+								</li>
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item"><a class="page-link" href="#">2</a></li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item">
+									<a class="page-link" href="#">Siguiente</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
 				</div>
+
+
 
 				<!-- ASIDE -->
 				<div class="col-xxl-2 col-lg-12 aside text-center">
@@ -168,6 +275,34 @@ $security->checkLoggedIn();
 							<p>Mesa 1</p>
 						</div>					
 					</div>
+					<!-- Calculadora -->
+					<div class="row calculadora text-center" style="padding-top: 15px;">
+						<div class="col-2 text-center titulo2 bg-dark">
+							<p> Calculadora </p>
+						</div>
+
+						<div class="calculator">
+							<input type="text" class="result" readonly>
+							<div class="keypad">
+								<button class="key" onclick="appendToResult('7')">7</button>
+								<button class="key" onclick="appendToResult('8')">8</button>
+								<button class="key" onclick="appendToResult('9')">9</button>
+								<button class="key operator" onclick="appendToResult('/')">/</button>
+								<button class="key" onclick="appendToResult('4')">4</button>
+								<button class="key" onclick="appendToResult('5')">5</button>
+								<button class="key" onclick="appendToResult('6')">6</button>
+								<button class="key operator" onclick="appendToResult('*')">x</button>
+								<button class="key" onclick="appendToResult('1')">1</button>
+								<button class="key" onclick="appendToResult('2')">2</button>
+								<button class="key" onclick="appendToResult('3')">3</button>
+								<button class="key operator" onclick="appendToResult('-')">-</button>
+								<button class="key zero" onclick="appendToResult('0')">0</button>
+								<button class="key" onclick="appendToResult('.')">.</button>
+								<button class="key c" id="clear">C</button>
+								<button class="key operator" onclick="appendToResult('+')">+</button>
+								<button class="key equal" onclick="calculate()"> =</button>
+							</div>
+						</div>
 					</div>
 				</div>
 	</main>

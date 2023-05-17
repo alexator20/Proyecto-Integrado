@@ -1,15 +1,11 @@
-<!-- $security = new Security();
-//para comprobar si estas logeado
-$security->checkLoggedIn(); -->
-
 <?php
 require_once __DIR__ . "/php/autoloader.php";
-$empleado = new Empleado();
-
-$conexion=mysqli_connect('localhost','root','','tpvdatabase')
-
-
+$security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn();
+//$empleado = new Empleado();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -59,60 +55,33 @@ $conexion=mysqli_connect('localhost','root','','tpvdatabase')
 
 	<!-- MAIN -->
 	<main class="vh-100">
-	<div class="container-fluid">
-		<div class="row text-center vh-100">
-			<!-- LATERAL -->
-			<div class="col-2 mesa bg-dark lateral2 lateral text-center">
-				<ul>
-					<li style="margin-top: 30px;"><a href="">Ofertas y Combos</a></li>
-					<li style="margin-top: 30px;"><a href="">Cafes e Infusiones</a></li>
-					<li style="margin-top: 30px;"><a href="">Cervezas</a></li>
-					<li style="margin-top: 30px;"><a href="">Refrescos</a></li>
-					<li style="margin-top: 30px;"><a href="">Licores</a></li>
-					<li style="margin-top: 30px;"><a href="">Bolleria</a></li>
-					<li style="margin-top: 30px;"><a href="">Tostadas</a></li>
-					<li style="margin-top: 30px;"><a href="">Bocadillos Frios</a></li>
-					<li style="margin-top: 30px;"><a href="">Bocadillos Calientes</a></li>
-					<li style="margin-top: 30px;"><a href="">Tapas</a></li>
-				</ul>
-			</div>
-			<!-- CENTRO -->
-			
-			<div class="col-10">
-				<div class="container-fluid">
-				<table>
-					<tr>
-						<td>Nombre</td>
-						<td>Apellidos</td>
-						<td>Correo</td>
-						<td>Direccion</td>
-						<td>Foto</td>
-					</tr>
+		<div class="container-fluid ">
+			<div class="row text-center vh-100">
+				<!-- LATERAL -->
+				<div class="col-2 mesa bg-dark lateral2 lateral text-center">
+					<ul>
+						<li style="margin-top: 30px;"><a href="">Ofertas y Combos</a></li>
+						<li style="margin-top: 30px;"><a href="">Cafes e Infusiones</a></li>
+						<li style="margin-top: 30px;"><a href="">Cervezas</a></li>
+						<li style="margin-top: 30px;"><a href="">Refrescos</a></li>
+						<li style="margin-top: 30px;"><a href="">Licores</a></li>
+						<li style="margin-top: 30px;"><a href="">Bolleria</a></li>
+						<li style="margin-top: 30px;"><a href="">Tostadas</a></li>
+						<li style="margin-top: 30px;"><a href="">Bocadillos Frios</a></li>
+						<li style="margin-top: 30px;"><a href="">Bocadillos Calientes</a></li>
+						<li style="margin-top: 30px;"><a href="">Tapas</a></li>
+					</ul>
+				</div>
+				<!-- CENTRO -->
+				<?php $empleado->getAllEmpleados() ?>
 
-					<?php
-					$sql = "SELECT nombre, apellidos, correo, direccion, foto FROM empleado";
-					$result = mysqli_query($conexion, $sql);
 
-					while ($mostrar = mysqli_fetch_array($result)) {
-						?>
-						<tr>
-							<td><?php echo $mostrar['nombre'] ?></td>
-							<td><?php echo $mostrar['apellidos'] ?></td>
-							<td><?php echo $mostrar['correo'] ?></td>
-							<td><?php echo $mostrar['direccion'] ?></td>
-							<td><?php echo $mostrar['foto'] ?></td>
-						</tr>
-					<?php
-					}
-					?>
-				</table>
 
-				</div>				
+
+
 			</div>
 		</div>
-	</div>
-</main>
-
+	</main>
 	<script src="./Assets/js/index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
