@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO empleado (nombre, apellidos, correo, direccion) VALUES ('$nombre', '$apellidos', '$correo', '$direccion')";
     mysqli_query($conexion, $sql);
 
-
+}
 ?>
 
 <!DOCTYPE html>
