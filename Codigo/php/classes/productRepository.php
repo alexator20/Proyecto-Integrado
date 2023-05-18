@@ -1,13 +1,14 @@
 <?php
 
-class productRepository extends Connection{
+class productRepository extends Connection
+{
 
     public function __construct()
     {
         $this->connect();
     }
 
-    public function getAllProduct():array 
+    public function getAllProduct(): array
     {
         $stmt = $this->conn->query("SELECT * FROM producto ORDER BY cod_producto DESC");
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -33,35 +34,41 @@ class productRepository extends Connection{
         return $data;
     } */
 
-    public function getAllCategoryProduct(string $category): array 
+    public function getAllCategoryProduct(string $category): array
     {
-    $data = [];
-    $stmt = $this->conn->prepare("SELECT * FROM producto WHERE categoria = :category ORDER BY cod_producto ASC");
-    $stmt->bindParam(':category', $category);
-    $stmt->execute();
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $data[] = new Product(...$row);
-
+        $data = [];
+        $stmt = $this->conn->prepare("SELECT * FROM producto WHERE categoria = :category ORDER BY cod_producto ASC");
+        $stmt->bindParam(':category', $category);
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $data[] = new Product(...$row);
+        }
+        return $data;
     }
-    return $data;
-    }
 
 
-    public function drawProductCard(array $data):string {
+    public function drawProductCard(array $data): string
+    {
 
         $output = "";
         //bucle
         foreach ($data as $key) {
             $output .= "<div class='col tarjetas text-center'>";
             $output .= "<div class='card' style='width: 14rem; height: 17rem;'>";
-            $output .= "<img src='./Assets/imgs/Imagenes_productos_TPV/".$key->getCategoria()."/".$key->getImagen()."' class='card-img-top' alt='".$key->getNombre()."'>";
+            $output .= "<img src='./Assets/imgs/Imagenes_productos_TPV/" . $key->getCategoria() . "/" . $key->getImagen() . "' class='card-img-top' alt='" . $key->getNombre() . "'>";
             $output .= "<div class='card-body'>";
-            $output .= "<h6 class='card-title'>".$key->getNombre()."</h6>";
-            $output .= "<a href='/Codigo/index.php?categoria=".$key->getPrecio()."' class='btn btn-dark'>Mini</a>";
-            
+            $output .= "<h6 class='card-title'>" . $key->getNombre() . "</h6>";
+
+            if ($key->getCategoria() == "Bocadillos") {
+                $output .= "<a href='/Codigo/insertPreticket.php?id=" . $key->getCodProducto() . "' class='btn btn-dark'>Mini</a>";
+            } else {
+                $output .= "<a href=/Codigo/insertPreticket.php?id=" . $key->getCodProducto() . "' class='btn btn-dark'>Añadir</a>";
+            }
+
+
             if ($key->getCategoria() == "Bocadillos") {
 
-                $output .= "<a href='/Codigo/index.php?categoria=".($key->getPrecio()+1)."' class='btn btn-dark'>Maxi</a>";
+                $output .= "<a href='/Codigo/insertPreticket.php?precio=1 & id=" . $key->getCodProducto() . "' class='btn btn-dark'>Max</a>";
             }
             $output .= "</div></div></div>";
         }

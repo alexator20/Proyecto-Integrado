@@ -46,4 +46,21 @@ class TicketRepository Extends Connection{
         }
         return $output;
     }
+        
+    public function insertTicket(string $mesa)
+{
+    $stmt = $this->conn->prepare("INSERT INTO ticket (fecha, num_mesa) VALUES (:fecha, :num_mesa)");
+    $fecha = date("Y-m-d");
+    $hora = date("H:i:s");
+    $stmt->bindParam(':fecha', $fecha);
+    $stmt->bindParam(':num_mesa', $mesa);
+    $stmt->execute();
+    
+    $ticketId = $this->conn->lastInsertId();  // Obtener el ID del ticket insertado
+    
+    // Crear un nuevo objeto ticket con los datos necesarios y devolverlo
+    $ticket = new Ticket($ticketId,$hora, $fecha, $mesa);
+    return $ticket;
+}
+
 }

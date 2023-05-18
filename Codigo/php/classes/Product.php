@@ -50,4 +50,12 @@ class Product {
     {
         return $this->categoria;
     }
+
+    /**
+     * Get the value of cod_producto
+     */
+    public function getCodProducto(): int
+    {
+        return $this->cod_producto;
+    }
 }
