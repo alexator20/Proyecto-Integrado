@@ -127,7 +127,7 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Sobrasada con Q
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Jamon con Tomate',4.00,"Bocadillos","NULL");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Francesa con Jamon',4.00,"Bocadillos","NULL");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Francesa con Sobrasada',4.00,"Bocadillos","francesa con sobrasada.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Atun con Olivas',4.00,"Bocadillos","NULL");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Atun con Olivas',4.00,"Bocadillos","atunconolivas.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Pechuga y Queso',4.00,"Bocadillos","pechuga y queso.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Chistorra con patatas y huevo',4.50,"Bocadillos","chistorrapatata.jpg");
 
