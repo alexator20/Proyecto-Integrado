@@ -8,9 +8,12 @@ class Security extends Connection
 
     public function __construct()
     {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         parent::__construct();
-        session_start();
     }
+    
 
     public function checkLoggedIn()
     {
@@ -84,7 +87,8 @@ class Security extends Connection
             if ($this->conn->query($sql) === TRUE) {
                 echo "Contraseña actualizada correctamente";
             } else {
-                echo "Error al actualizar la contraseña: " . $this->conn->error;
+                $errorInfo = $this->conn->errorInfo();
+                echo "Error al actualizar la contraseña: " . $errorInfo[2];
             }
         } else {
             echo "No se encontró ningún usuario con ese correo electrónico";
