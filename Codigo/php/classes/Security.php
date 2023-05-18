@@ -1,13 +1,11 @@
 <?php
-/* <?php
-require_once "autoloader.php";
-$security = new Security();
-$security->checkLoggedIn();
-?> */
+require_once(__DIR__ . "/../autoloader.php");
+
 class Security extends Connection
 {
     private $loginPage = "/register.php";
     private $homePage = "/index.php";
+
     public function __construct()
     {
         parent::__construct();
@@ -36,7 +34,8 @@ class Security extends Connection
         }
     }
 
-    public function getUserData(){
+    public function getUserData()
+    {
         if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) {
             return $_SESSION["loggedIn"];
         }
@@ -46,7 +45,6 @@ class Security extends Connection
     {
         if ($user) {
             return $this->checkPassword($user["contrasenya"], $userPassword);
-            //return $this->checkPassword($user["securePassword"], $userPassword);
         } else {
             return false;
         }
@@ -54,7 +52,7 @@ class Security extends Connection
 
     private function checkPassword($securePassword, $userPassword)
     {
-        //return password_verify($userPassword, $securePassword);
+        // return password_verify($userPassword, $securePassword);
         return ($userPassword === $securePassword);
     }
 
@@ -68,29 +66,33 @@ class Security extends Connection
             return false;
         }
     }
-}
 
-function forgotPassword($email, $new_password) {
-  
-  
-    // Crear una consulta SQL para buscar el usuario por su dirección de correo electrónico
-    $sql = "SELECT * FROM empleado WHERE correo='$email'";
-  
-    // Ejecutar la consulta y almacenar el resultado en una variable
-    $result = $conn->query($sql);
-  
-    // Comprobar si se encontró un usuario con ese correo electrónico
-    if ($result->num_rows > 0) {
-      // Crear una consulta SQL para actualizar la contraseña del usuario
-      $sql = "UPDATE empleado SET contrasenya='$new_password' WHERE correo='$email'";
-  
-      // Ejecutar la consulta
-      if ($conn->query($sql) === TRUE) {
-        echo "Contraseña actualizada correctamente";
-      } else {
-        echo "Error al actualizar la contraseña: " . $conn->error;
-      }
-    } else {
-      echo "No se encontró ningún usuario con ese correo electrónico";
+    public function forgotPassword($email, $new_password)
+    {
+        // Crear una consulta SQL para buscar el usuario por su dirección de correo electrónico
+        $sql = "SELECT * FROM empleado WHERE correo='$email'";
+
+        // Ejecutar la consulta y almacenar el resultado en una variable
+        $result = $this->conn->query($sql);
+
+        // Comprobar si se encontró un usuario con ese correo electrónico
+        if ($result->rowCount() > 0) {
+            // Crear una consulta SQL para actualizar la contraseña del usuario
+            $sql = "UPDATE empleado SET contrasenya='$new_password' WHERE correo='$email'";
+
+            // Ejecutar la consulta
+            if ($this->conn->query($sql) === TRUE) {
+                echo "Contraseña actualizada correctamente";
+            } else {
+                echo "Error al actualizar la contraseña: " . $this->conn->error;
+            }
+        } else {
+            echo "No se encontró ningún usuario con ese correo electrónico";
+        }
     }
 }
+
+$security = new Security();
+$security->checkLoggedIn();
+
+?>

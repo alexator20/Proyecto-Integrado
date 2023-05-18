@@ -5,9 +5,10 @@ require_once(__DIR__ . "/php/autoloader.php");
 $security = new Security();
 if (isset($_POST["forgot_password"])) {
   $email = $_POST["email"];
-  $new_password = $_POST["new_password"]; // cambiar "password" a "new_password"
+  $new_password = $_POST["new_password"];
   
-  $security->forgotPassword($email, $new_password); // llamar al método forgotPassword() de la instancia de la clase Security
+  $security->forgotPassword($email, $new_password);
+  // Aquí se llama al método forgotPassword() de la instancia de la clase Security
 }
 
 ?>
@@ -33,17 +34,15 @@ if (isset($_POST["forgot_password"])) {
             <input type="text" name="email" placeholder="example@gmail.com" value="">
           </label>
           <label>
-            <span>Password</span>
+            <span>New Password</span>
             <div class="password-field">
               <input type="password" name="new_password" minlength="6" maxlength="20" value="" required>
             </div>
           </label>
-          <a href="./register.php"><button type="submit" name="forgot_password" class="submit">UPDATE</button></a>
+          <button type="submit" name="forgot_password" class="submit">UPDATE</button>
         </form>
       </div>
     </div>
   </body>
   
-</body>
-
 </html>
