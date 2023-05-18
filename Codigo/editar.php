@@ -1,22 +1,35 @@
 <?php
 $conexion = mysqli_connect('localhost', 'root', '', 'tpvdatabase');
 
-if (isset($_GET['delete_id'])) {
-    $id = $_GET['delete_id'];
+if (isset($_POST['update'])) {
+    $cod_empleado = $_POST['cod_empleado'];
+    $nombre = $_POST['nombre'];
+    $apellidos = $_POST['apellidos'];
+    $correo = $_POST['correo'];
+    $direccion = $_POST['direccion'];
 
-    // Realiza la operación de eliminación del campo en la base de datos
-    $deleteQuery = "DELETE FROM empleado WHERE cod_empleado = ?";
-    $stmt = $conexion->prepare($deleteQuery);
-    $stmt->bind_param("i", $id);
+    // Realiza la operación de actualización del campo en la base de datos
+    $updateQuery = "UPDATE empleado SET nombre = ?, apellidos = ?, correo = ?, direccion = ? WHERE cod_empleado = ?";
+    $stmt = $conexion->prepare($updateQuery);
+    $stmt->bind_param("ssssi", $nombre, $apellidos, $correo, $direccion, $cod_empleado);
     $stmt->execute();
 
-    // Redirecciona a la página actual para actualizar la tabla después de la eliminación
-    header("Location: {$_SERVER['PHP_SELF']}");
+    // Redirecciona a la página de empleados.php después de la actualización
+    header("Location: empleados.php");
     exit();
 }
 
-$sql = "SELECT cod_empleado, nombre, apellidos, correo, direccion, foto FROM empleado";
-$result = mysqli_query($conexion, $sql);
+if (isset($_POST['cod_empleado'])) {
+    $cod_empleado = $_POST['cod_empleado'];
+
+    // Obtiene los datos del empleado a modificar
+    $selectQuery = "SELECT cod_empleado, nombre, apellidos, correo, direccion FROM empleado WHERE cod_empleado = ?";
+    $stmt = $conexion->prepare($selectQuery);
+    $stmt->bind_param("i", $cod_empleado);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $mostrar = mysqli_fetch_array($result);
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +42,7 @@ $result = mysqli_query($conexion, $sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="./Assets/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <title>La vaquita</title>
+    <title>Modificar Empleado</title>
 </head>
 
 <body class="vh-100">
@@ -71,44 +84,26 @@ $result = mysqli_query($conexion, $sql);
         <div class="container-fluid">
             <div class="col-12">
                 <div class="container-fluid d-flex justify-content-center">
-                    <table>
-                        <tr class="headerTabla">
-                            <td>Nombre</td>
-                            <td>Apellidos</td>
-                            <td>Correo</td>
-                            <td>Direccion</td>
-                            <td>Foto</td>
-                            <td>Acciones</td>
-                        </tr>
-
-                        <?php
-                        while ($mostrar = mysqli_fetch_array($result)) {
-                            ?>
-                            <tr>
-                                <td><?php echo $mostrar['nombre'] ?></td>
-                                <td><?php echo $mostrar['apellidos'] ?></td>
-                                <td><?php echo $mostrar['correo'] ?></td>
-                                <td><?php echo $mostrar['direccion'] ?></td>
-                                <td><?php echo $mostrar['foto'] ?></td>
-                                <td>
-                                    <form method="POST" action="editar.php">
-                                        <input type="hidden" name="cod_empleado" value="<?php echo $mostrar['cod_empleado']; ?>">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            <i class="fas fa-edit"></i> Modificar
-                                        </button>
-                                    </form>
-                                    <form method="POST" action="?delete_id=<?php echo $mostrar['cod_empleado']; ?>">
-                                        <button type="submit" class="btn btn-danger btn-sm">
-                                            <i class="fas fa-trash"></i> Borrar
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </table>
-
+                    <form method="POST" action="editar.php">
+                        <input type="hidden" name="cod_empleado" value="<?php echo $mostrar['cod_empleado']; ?>">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $mostrar['nombre']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellidos" class="form-label">Apellidos:</label>
+                            <input type="text" class="form-control" id="apellidos" name="apellidos" value="<?php echo $mostrar['apellidos']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo:</label>
+                            <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $mostrar['correo']; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección:</label>
+                            <input type="text" class="form-control" id="direccion" name="direccion" value="<?php echo $mostrar['direccion']; ?>" required>
+                        </div>
+                        <button type="submit" name="update" class="btn btn-primary">Actualizar</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -119,6 +114,4 @@ $result = mysqli_query($conexion, $sql);
 </body>
 
 </html>
-
-
 
