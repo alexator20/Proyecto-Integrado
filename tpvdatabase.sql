@@ -41,12 +41,11 @@ CREATE TABLE producto_servido (
 
 # OFERTAS Y COMBOS
 
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada + cafe/zumo',2.50,"Combos","combo.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Curasan + cafe/zumo',2.50,"Combos","combo.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada Especial + cafe/zumo',2.50,"Combos","combo.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada + cafe + zumo',3.50,"Combos","combo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada + cafe/zumo',2.50,"Combos","tostadacafe.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Curasan + cafe/zumo',2.50,"Combos","curasancafe.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada Especial + cafe/zumo',2.50,"Combos","tostadaespecial.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada + cafe + zumo',3.50,"Combos","tostadacafezumo.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Gofre/Creppe + Cafe',3.50,"Combos","combo.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tarta + Cafe',3.50,"Combos","combo.jpg");
 
 # CAFES E INFUSIONES
 
@@ -57,14 +56,14 @@ INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Bombon', 1.50, "C
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cafe con leche', 1.60, "Cafes","cafeleche.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Carajillo Marie brizard,terry, negrita', 1.60, "Cafes","carajillomarie.jpeg");
 INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'MANZANILLA PIRAMIDE ',1.60,"Cafes","manzanillapiramide.jpg");
-INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'MENTA-POLEO PIRAMIDE  ',1.60,"Cafes","mentapiramicd");
+INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'MENTA-POLEO PIRAMIDE  ',1.60,"Cafes","mentapiramide.jpg");
 INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'TE VERDE GUNPOWDER  ',1.60,"Cafes","teverdegunpowder.jpg");
 
 # CERVEZAS
 
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Cana)', 1.40,"Cervezas", "cana.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Doble)', 1.90,"Cervezas","doble.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cruzcampo (Tanque)', 2.90,"Cervezas", "tanque.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Alhambra Verde', 2.90,"Cervezas", "Alhambraverde.png");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('San Miguel', 1.80,"Cervezas", "sanmiguel.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('San Miguel 0,0', 2.00,"Cervezas", "sanmiguel00.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Radler Cruzcampo', 2.00,"Cervezas", "radler.jpg");
@@ -75,8 +74,8 @@ INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Turia', 2.00,"Cer
 # REFRESCOS
 
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola', 2.00,"Refrescos", "cola.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero', 2.00,"Refrescos", "cocazero.png");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero Zero', 2.00,"Refrescos", "cocazerozero.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero', 2.00,"Refrescos", "colazero.png");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cocacola Zero Zero', 2.00,"Refrescos", "colazerozero.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Acuarius Naranja', 2.00,"Refrescos", "acuariusnaranja.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Acuarius Limon', 2.00,"Refrescos", "acuariuslimon.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Fanta Naranja', 2.00,"Refrescos", "fantalimon.jpg");
@@ -90,35 +89,35 @@ INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Cazalla Tenis', 
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Barrejat (cazalla y mistela)', 1.20, "Licores","barrejat.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito Licor de hierbas, Arroz o Negrita', 1.30, "Licores","licorhierbas.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito de Cutty Shark o J&B', 1.70, "Licores","cuttyshark.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito de Jack D. o Johnnie W. Red Label', 2.50, "Licores","redlabel.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Chupito de Jack D. o Johnnie W. Red Label', 2.50, "Licores","chupitojack.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa de Terry o Ron Negrita', 1.70, "Licores","copaterry.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Pacharán Zoco o Ponche Caballero', 1.70, "Licores","copapacharan.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Licor de Hierbas o Licor de Arroz', 1.70, "Licores","copalicorhierbas.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Cutty, J&B o Bourbon Four Roses', 2.80, "Licores","copacutty.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Cutty, J&B o Bourbon Four Roses', 2.80, "Licores","copajyb.jpg");
 
 
 # BOLLERIA 
 
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Mini', 0.60, "Bolleria","croissant.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Mini Choco', 0.60, "Bolleria","croissant.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Grande', 1.50, "Bolleria","croissant.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Napolitana York Queso', 1.60, "Bolleria","croissant.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Napolitana Chocolate', 1.60, "Bolleria","croissant.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Pisto', 1.60, "Bolleria","croissant.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Magdalena', 1.00, "Bolleria","croissant.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Donut', 1.10, "Bolleria","croissant.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Rosquilletas', 1.20, "Bolleria","croissant.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Mini', 0.60, "Bolleria","curasanmini.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Mini Choco', 0.60, "Bolleria","minichoco.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Grande', 1.50, "Bolleria","minichoco.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Napolitana York Queso', 1.60, "Bolleria","napolitanayork.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Napolitana Chocolate', 1.60, "Bolleria","napolitanachocolate.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Pisto', 1.60, "Bolleria","pisto.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Magdalena', 1.00, "Bolleria","magdalena.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Enseimada', 1.00, "Bolleria","enseimada.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Rosquilletas', 1.20, "Bolleria","rosquilletas.jpg");
 
 #TOSTADAS
 
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Aceite',2.50,"Tostadas","tostadaaceite.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Mantequilla',2.50,"Tostadas","tostadasmantequilla.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Mantequilla',2.50,"Tostadas","tostadamantequilla.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate',2.50,"Tostadas","tostadatomate.png");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate y Queso Fresco',3.50,"Tostadas","photo.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate y Jamon',3.50,"Tostadas","photo2.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate y Queso Fresco',3.50,"Tostadas","tostadatomatequeso.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate y Jamon',3.50,"Tostadas","tostadajamon.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Sobrasada y Queso',3.50,"Tostadas","photo3.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate Aguacate y Queso Fresco',3.50,"Tostadas","photo4.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Popular',3.50,"Tostadas","photo5.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada de Pavo',3.50,"Tostadas","tostadapavo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Atun Olivas',3.50,"Tostadas","photo5.jpg");
 
 #BOCADILLOS
 
@@ -134,15 +133,15 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Chistorra con p
 
 #TAPAS 
 
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Pincho de Tortilla',3.50,"Tapas","tapa.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Habas Picantonas',3.50,"Tapas","tapa.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Mollejitas Morunas',3.50,"Tapas","tapa.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Esgarraet o Ajoarriero',3.50,"Tapas","tapa.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Bravas',3.50,"Tapas","tapa.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Morro',3.50,"Tapas","tapa.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Oreja Adobada',3.50,"Tapas","tapa.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Ensaladilla Rusa',3.50,"Tapas","tapa.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Albondigas de "La abuela"',3.50,"Tapas","tapa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Pincho de Tortilla',3.50,"Tapas","pinchotortilla.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Habas Picantonas',3.50,"Tapas","habas.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Mollejitas Morunas',3.50,"Tapas","mollejas.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Esgarraet o Ajoarriero',3.50,"Tapas","esgarraet.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Bravas',3.50,"Tapas","bravas.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Morro',3.50,"Tapas","morro.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Oreja Adobada',3.50,"Tapas","orejacerdo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Ensaladilla Rusa',3.50,"Tapas","ensaladillarusa.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Albondigas de "La abuela"',3.50,"Tapas","albondigas.jpg");
 
 
 
