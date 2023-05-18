@@ -32,11 +32,11 @@ class TicketRepository Extends Connection{
     {
         $output = "";
         foreach ($list as $detalles) {
-            $cod_ticket= is_null($detalles->getCod_ticket()) ? "Unknown" : $detalles->getHora();
+            $cod_ticket= is_null($detalles->getCod_ticket()) ? "Unknown" : $detalles->getCod_ticket();
             $hora= is_null($detalles->getHora()) ? "-.--" : $detalles->getHora();
             $fecha = is_null($detalles->getFecha()) ? "-.--" : ($detalles->getfecha());
             $output .= "<tr>";
-            $output .= "    <td><strong>" . $detalles->get() . "</strong>, " . $hora. "<br>" . $fecha .".</td>";
+            $output .= "    <td><strong>" . $detalles->getNum_mesa() . "</strong>, " . $hora. "<br>" . $fecha .".</td>";
 /*             $output .= "<td>".
                 (is_null($detalles->getImg()) ?
                     "":
