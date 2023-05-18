@@ -6,14 +6,16 @@ private int $hora;
 private string $fecha;
 private int $num_mesa;
 private int $cod_empleado;
+private bool $comprobacion;
 
-public function __construct(int $cod_ticket, string $hora,string $fecha, int $num_mesa,int $cod_empleado)
+public function __construct(int $cod_ticket, string $hora,string $fecha, int $num_mesa,int $cod_empleado,bool $comprobacion)
 {
     $this->cod_ticket = $cod_ticket;
     $this->hora = $hora;
     $this->fecha = $fecha;
     $this->num_mesa = $num_mesa;
     $this->cod_empleado = $cod_empleado;
+    $this->comprobacion=$comprobacion;
 }
 
 
@@ -113,6 +115,26 @@ return $this->cod_empleado;
 public function setCod_empleado($cod_empleado)
 {
 $this->cod_empleado = $cod_empleado;
+
+return $this;
+}
+
+/**
+ * Get the value of comprobacion
+ */ 
+public function getComprobacion()
+{
+return $this->comprobacion;
+}
+
+/**
+ * Set the value of comprobacion
+ *
+ * @return  self
+ */ 
+public function setComprobacion($comprobacion)
+{
+$this->comprobacion = $comprobacion;
 
 return $this;
 }

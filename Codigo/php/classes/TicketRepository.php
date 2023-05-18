@@ -21,7 +21,7 @@ class TicketRepository Extends Connection{
         $result = [];
         $stmt = $this->conn->query("SELECT * FROM ticket WHERE cod_ticket= $cod_ticket");
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $result[] = new Ticket($row['cod_ticket'], $row['hora'],$row['fecha'],$row['num_mesa'],$row['cod_empleado']);
+            $result[] = new Ticket($row['cod_ticket'], $row['hora'],$row['fecha'],$row['num_mesa'],$row['cod_empleado'],$row['comprobacion']);
         }
         return $result;
     }
