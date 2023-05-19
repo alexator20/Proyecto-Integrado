@@ -170,7 +170,7 @@ $repository = new productRepository;
 						</div>
 					</div>
 					<!-- Ticket -->
-					<div class="row">
+					<div class="row ticket">
 						<div class="col-12 text-center titulo2 bg-dark">
 							<p> Ticket </p>
 						</div>
