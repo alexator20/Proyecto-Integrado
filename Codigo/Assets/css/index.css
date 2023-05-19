@@ -230,3 +230,8 @@ button{
 .editar{
   padding-top: 100px;
 }
+
+.botonEnviar{
+  padding-top: 20px;
+  text-align: center;
+}
