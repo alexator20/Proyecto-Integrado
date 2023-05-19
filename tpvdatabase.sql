@@ -27,6 +27,7 @@ CREATE TABLE ticket(
     fecha DATE NOT NULL,
     num_mesa VARCHAR(20) NOT NULL,
     cod_empleado INT,
+    estado INT,
     FOREIGN KEY (cod_empleado) REFERENCES empleado(cod_empleado)
 );
 
