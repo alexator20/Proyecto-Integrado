@@ -53,7 +53,7 @@ class TicketRepository extends Connection
         $stmt->bindParam(':hora', $hora);
         $stmt->execute();
 
-        $ticketId = $this->conn->lastInsertId();  // Obtener el ID del ticket insertado
+        $ticketId = $this->conn->lastInsertId();
 
         // Crear un nuevo objeto ticket con los datos necesarios y devolverlo
         $ticket = new Ticket($ticketId, $hora, $fecha, $mesa, 1);

@@ -25,15 +25,6 @@ class productRepository extends Connection
         return new Product(...$row);
     }
 
-    /* public function getAllCategoryProduct(string $categoria):array 
-    {
-        $stmt = $this->conn->query("SELECT * FROM producto WHERE categoria = $categoria ORDER BY cod_producto DESC");
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $data[] = new Product(...$row);
-        }
-        return $data;
-    } */
-
     public function getAllCategoryProduct(string $category): array
     {
         $data = [];
@@ -45,7 +36,6 @@ class productRepository extends Connection
         }
         return $data;
     }
-
 
     public function drawProductCard(array $data): string
     {
@@ -64,7 +54,6 @@ class productRepository extends Connection
             } else {
                 $output .= "<a href=/Codigo/insertPreticket.php?id=" . $key->getCodProducto() . "' class='btn btn-dark'>Añadir</a>";
             }
-
 
             if ($key->getCategoria() == "Bocadillos") {
 
