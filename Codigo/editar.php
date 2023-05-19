@@ -83,26 +83,26 @@ if (isset($_POST['cod_empleado'])) {
     <main class="vh-100">
         <div class="container-fluid">
             <div class="col-12">
-                <div class="container-fluid d-flex justify-content-center">
+                <div class="container-fluid d-flex justify-content-center editar">
                     <form method="POST" action="editar.php">
                         <input type="hidden" name="cod_empleado" value="<?php echo $mostrar['cod_empleado']; ?>">
                         <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre:</label>
+                            <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $mostrar['nombre']; ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="apellidos" class="form-label">Apellidos:</label>
+                            <label for="apellidos" class="form-label">Apellidos</label>
                             <input type="text" class="form-control" id="apellidos" name="apellidos" value="<?php echo $mostrar['apellidos']; ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="correo" class="form-label">Correo:</label>
+                            <label for="correo" class="form-label">Correo</label>
                             <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $mostrar['correo']; ?>" required>
                         </div>
                         <div class="mb-3">
-                            <label for="direccion" class="form-label">Dirección:</label>
+                            <label for="direccion" class="form-label">Dirección</label>
                             <input type="text" class="form-control" id="direccion" name="direccion" value="<?php echo $mostrar['direccion']; ?>" required>
                         </div>
-                        <button type="submit" name="update" class="btn btn-primary">Actualizar</button>
+                        <button type="submit" name="update" class="btn btn-dark">Actualizar</button>
                     </form>
                 </div>
             </div>
