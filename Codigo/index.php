@@ -45,9 +45,6 @@ $repository = new productRepository;
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="editar.html">EDITAR</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="caja.php">CAJA</a>
 						</li>
 						<a class="navbar-brand log-out" href="register.php">
