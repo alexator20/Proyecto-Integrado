@@ -45,9 +45,6 @@ $repository = new productRepository;
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="editar.html">EDITAR</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="caja.php">CAJA</a>
 						</li>
 						<a class="navbar-brand log-out" href="register.php">
@@ -103,36 +100,36 @@ $repository = new productRepository;
 							<p> Mesas </p>
 						</div>
 						<div class="col-2 offset-2 mesa">
-							<a href="/mesa.php?mesa=1t"> <img src="./Assets/imgs/mesas/1.png" alt="mesa 1t"> </a>
+							<a href="/mesa.php?mesa=1T"> <img src="./Assets/imgs/mesas/1.png" alt="mesa 1T"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href="/mesa.php?mesa=3t"> <img src="./Assets/imgs/mesas/3.png" alt="mesa 3t"> </a>
+							<a href="/mesa.php?mesa=3T"> <img src="./Assets/imgs/mesas/3.png" alt="mesa 3T"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href="/mesa.php?mesa=5t"> <img src="./Assets/imgs/mesas/5.png" alt="mesa 5t"> </a>
+							<a href="/mesa.php?mesa=5T"> <img src="./Assets/imgs/mesas/5.png" alt="mesa 5T"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href="/mesa.php?mesa=7t"> <img src="./Assets/imgs/mesas/7.png" alt="mesa 7t"> </a>
+							<a href="/mesa.php?mesa=7T"> <img src="./Assets/imgs/mesas/7.png" alt="mesa 7T"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href="/mesa.php?mesa=9t"> <img src="./Assets/imgs/mesas/9.png" alt="mesa 9t"> </a>
+							<a href="/mesa.php?mesa=9T"> <img src="./Assets/imgs/mesas/9.png" alt="mesa 9T"> </a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-2 offset-2 mesa">
-							<a href="/mesa.php?mesa=2t"> <img src="./Assets/imgs/mesas/2.png" alt="mesa 2t"> </a>
+							<a href="/mesa.php?mesa=2T"> <img src="./Assets/imgs/mesas/2.png" alt="mesa 2T"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href="/mesa.php?mesa=4t"> <img src="./Assets/imgs/mesas/4.png" alt="mesa 4t"> </a>
+							<a href="/mesa.php?mesa=4T"> <img src="./Assets/imgs/mesas/4.png" alt="mesa 4T"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href="/mesa.php?mesa=6t"> <img src="./Assets/imgs/mesas/6.png" alt="mesa 6t"> </a>
+							<a href="/mesa.php?mesa=6T"> <img src="./Assets/imgs/mesas/6.png" alt="mesa 6T"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href="/mesa.php?mesa=8t"> <img src="./Assets/imgs/mesas/8.png" alt="mesa 8t"> </a>
+							<a href="/mesa.php?mesa=8T"> <img src="./Assets/imgs/mesas/8.png" alt="mesa 8T"> </a>
 						</div>
 						<div class="col-2 mesa">
-							<a href="/mesa.php?mesa=10t"> <img src="./Assets/imgs/mesas/10.png" alt="mesa 10t"> </a>
+							<a href="/mesa.php?mesa=10T"> <img src="./Assets/imgs/mesas/10.png" alt="mesa 10T"> </a>
 						</div>
 					</div>
 					<div class="row">
@@ -173,7 +170,7 @@ $repository = new productRepository;
 						</div>
 					</div>
 					<!-- Ticket -->
-					<div class="row">
+					<div class="row ticket">
 						<div class="col-12 text-center titulo2 bg-dark">
 							<p> Ticket </p>
 						</div>

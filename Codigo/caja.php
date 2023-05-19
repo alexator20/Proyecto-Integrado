@@ -19,12 +19,10 @@ $security->checkLoggedIn();
 </head>
 
 <body class="vh-100">
-	<header>
-		<!-- nav -->
-		<nav class="navbar navbar-expand-lg bg-dark lateral" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-dark lateral" data-bs-theme="dark">
 			<div class="container-fluid">
-				<div class="navbar-brand" style="padding-left: 25px;" href="#">
-					<img src="./Assets/imgs/mesas/logo2.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
+				<div class="navbar-brand" href="#">
+					<img src="./Assets/imgs/mesas/logo2.png" alt="Logo" width="55" height="55" style="margin-left:10px">
 				</div>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -38,14 +36,11 @@ $security->checkLoggedIn();
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="register.php">LOGIN</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="editar.html">EDITAR</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="caja.php">CAJA</a>
 						</li>
+						<a class="navbar-brand log-out" href="register.php">
+							<img src="./Assets/imgs/log-out.png" alt="Logo" width="40" height="40">
+						</a>
 					</ul>
 				</div>
 			</div>

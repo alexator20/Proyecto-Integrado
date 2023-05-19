@@ -19,7 +19,7 @@ $security->doLogin();
 
 <body>
 
-    <img class="logo" src="C:\Users\Usuario\Desktop\Proyecto-Integrado\Codigo\Assets\imgs\logoEmpresa.jpeg" width="120px" height="120px">
+    <img class="logo" src="./Assets/imgs/logoEmpresa.jpeg" width="120px" height="120px">
 
     <div class="container text-center">
         <div class="row align-items-center">
