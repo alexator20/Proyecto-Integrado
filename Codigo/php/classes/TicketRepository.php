@@ -45,7 +45,7 @@ class TicketRepository extends Connection
 
     public function insertTicket(string $mesa): Ticket
     {
-        $stmt = $this->conn->prepare("INSERT INTO ticket (hora,fecha, num_mesa) VALUES (:hora, :fecha, :num_mesa)");
+        $stmt = $this->conn->prepare("INSERT INTO ticket (hora,fecha,num_mesa) VALUES (:hora, :fecha, :num_mesa)");
         $fecha = date("Y-m-d");
         $hora = date("H:i");
         $stmt->bindParam(':fecha', $fecha);
