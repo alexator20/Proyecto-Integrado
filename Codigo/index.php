@@ -30,9 +30,8 @@ $repository = new productRepository;
 		<!-- nav -->
 		<nav class="navbar navbar-expand-lg bg-dark lateral" data-bs-theme="dark">
 			<div class="container-fluid">
-				<div class="navbar-brand" style="padding-left: 25px;" href="#">
-					<img src="Codigo\Assets\imgs\logoEmpresa.jpeg" alt="Logo" width="60" height="60"
-						class="d-inline-block align-text-top">
+				<div class="navbar-brand" href="#">
+					<img src="./Assets/imgs/logoEmpresa.jpeg" alt="Logo" width="55" height="55">
 				</div>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -53,9 +52,9 @@ $repository = new productRepository;
 						<li class="nav-item">
 							<a class="nav-link" href="caja.html">CAJA</a>
 						</li>
-						<li class="nav-item">
-							<img src="Codigo\Assets\imgs\log-out.png">
-						</li>
+						<a class="navbar-brand log-out" href="register.php">
+						<img src="./Assets/imgs/log-out.png" alt="Logo" width="40" height="40">
+						</a>
 					</ul>
 				</div>
 			</div>
