@@ -5,8 +5,8 @@ require_once __DIR__ . "/php/autoloader.php";
 $_SESSION["mesa"] = $_GET["mesa"];
 $_SESSION["categoria"] = "Cafes";
 
-$ticket = new TicketRepository;
-$ticket->insertTicket($_SESSION["mesa"]);
+$repository = new TicketRepository;
+$ticket = $repository->insertTicket($_SESSION["mesa"]);
 
-//$_SESSION["idTicket"] = $ticket->getCod_ticket();
+$_SESSION["idTicket"] = $ticket->getCod_ticket();
     header("location: index.php");
