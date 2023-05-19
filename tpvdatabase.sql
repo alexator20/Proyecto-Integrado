@@ -51,11 +51,11 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Gofre/Creppe +
 # CAFES E INFUSIONES
 
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cafe solo', 1.20, "Cafes","cafe.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cortado', 1.30, "Cafes","cortado.jpeg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cortado', 1.30, "Cafes","cortado.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Americano', 1.40, "Cafes","americano.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Bombon', 1.50, "Cafes","bombon.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Cafe con leche', 1.60, "Cafes","cafeleche.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Carajillo Marie brizard,terry, negrita', 1.60, "Cafes","carajillomarie.jpeg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Carajillo Marie brizard,terry, negrita', 1.60, "Cafes","carajillomarie.jpg");
 INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'MANZANILLA PIRAMIDE ',1.60,"Cafes","manzanillapiramide.jpg");
 INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'MENTA-POLEO PIRAMIDE  ',1.60,"Cafes","mentapiramide.jpg");
 INSERT INTO producto (nombre, precio,categoria,imagen) VALUES ( 'TE VERDE GUNPOWDER  ',1.60,"Cafes","teverdegunpowder.jpg");
