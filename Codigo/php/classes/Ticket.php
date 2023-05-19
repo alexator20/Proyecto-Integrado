@@ -2,12 +2,12 @@
 class  ticket extends Connection{
 
 private int $cod_ticket;
-private int $hora;
+private string $hora;
 private string $fecha;
-private int $num_mesa;
+private string $num_mesa;
 private int $cod_empleado;
 
-public function __construct(int $cod_ticket, string $hora,string $fecha, int $num_mesa,int $cod_empleado)
+public function __construct(int $cod_ticket, string $hora,string $fecha, string $num_mesa,int $cod_empleado)
 {
     $this->cod_ticket = $cod_ticket;
     $this->hora = $hora;
