@@ -88,12 +88,12 @@ $result = mysqli_query($conexion, $sql);
                                 <td>
                                     <form method="POST" action="editar.php">
                                         <input type="hidden" name="cod_empleado" value="<?php echo $mostrar['cod_empleado']; ?>">
-                                        <button type="submit" class="btn btn-dark btn-sm">
+                                        <button type="submit" class="btn btn-dark btn-sm buttonEmpl">
                                             <i class="fas fa-edit"></i> Modificar
                                         </button>
                                     </form>
                                     <form method="POST" action="?delete_id=<?php echo $mostrar['cod_empleado']; ?>">
-                                        <button type="submit" class="btn btn-danger btn-sm">
+                                        <button type="submit" class="btn btn-danger btn-sm buttonEmpl">
                                             <i class="fas fa-trash"></i> Borrar
                                         </button>
                                     </form>
