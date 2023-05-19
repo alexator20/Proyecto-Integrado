@@ -1,9 +1,9 @@
 <?php
 if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 require_once __DIR__ . "/php/autoloader.php";
-/* $security = new Security();
+$security = new Security();
 //para comprobar si estas logeado
-$security->checkLoggedIn(); */
+$security->checkLoggedIn();
 
 $category = isset($_SESSION["categoria"]) ? $_SESSION["categoria"] : "Cafes";
 $mesa = isset($_SESSION["mesa"]) ? $_SESSION["mesa"] : "";
@@ -39,7 +39,7 @@ $repository = new productRepository;
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="mesa.php">INICIO</a>
+							<a class="nav-link active" aria-current="page" href="index.php">INICIO</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
