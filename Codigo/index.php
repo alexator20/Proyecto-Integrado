@@ -31,7 +31,7 @@ $repository = new productRepository;
 		<nav class="navbar navbar-expand-lg bg-dark lateral" data-bs-theme="dark">
 			<div class="container-fluid">
 				<div class="navbar-brand" href="#">
-					<img src="./Assets/imgs/logoEmpresa.jpeg" alt="Logo" width="55" height="55">
+					<img src="./Assets/imgs/mesas/logo2.png" alt="Logo" width="55" height="55" style="margin-left:10px">
 				</div>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
