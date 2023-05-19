@@ -1,9 +1,10 @@
-<!-- $security = new Security();
-//para comprobar si estas logeado
-$security->checkLoggedIn(); -->
 
 <?php
 require_once __DIR__ . "/php/autoloader.php";
+$security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn();
+
 $empleado = new Empleado();
 
 $conexion=mysqli_connect('localhost','root','','tpvdatabase')
