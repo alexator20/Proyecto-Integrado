@@ -31,9 +31,8 @@ $repository = new productRepository;
 		<!-- nav -->
 		<nav class="navbar navbar-expand-lg bg-dark lateral" data-bs-theme="dark">
 			<div class="container-fluid">
-				<div class="navbar-brand" style="padding-left: 25px;" href="#">
-					<img src="./Assets/imgs/mesas/logo2.png" alt="Logo" width="60" height="60"
-						class="d-inline-block align-text-top">
+				<div class="navbar-brand" href="#">
+					<img src="./Assets/imgs/mesas/logo2.png" alt="Logo" width="55" height="55" style="margin-left:10px">
 				</div>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -49,14 +48,14 @@ $repository = new productRepository;
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="register.php">LOGIN</a>
-						</li>
-						<li class="nav-item">
 							<a class="nav-link" href="editar.html">EDITAR</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="caja.html">CAJA</a>
 						</li>
+						<a class="navbar-brand log-out" href="register.php">
+						<img src="./Assets/imgs/log-out.png" alt="Logo" width="40" height="40">
+						</a>
 					</ul>
 				</div>
 			</div>
@@ -101,7 +100,7 @@ $repository = new productRepository;
 				</div>
 
 				<!-- ASIDE -->
-				<div class="col-xxl-2 col-lg-12 aside text-center">
+				<div class="col-xxl-2 col-lg-12 text-center">
 
 					<div class="row">
 						<div class="col-12 text-center titulo2 bg-dark">

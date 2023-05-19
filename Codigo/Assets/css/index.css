@@ -1,7 +1,10 @@
+
+
+
 .lateral2 ul{
   margin-left: -40px;
   margin-top: -50px;
-  }
+  } 
   
   .lateral li {
     display: flex;
@@ -18,9 +21,10 @@
     padding: 5px;
     color: #ffffff;
     text-decoration: none;
-  
+    margin-left: 15px;
   }
   
+
   .lateral a::before {
     content: '';
     position: absolute;
@@ -39,15 +43,16 @@
     transform: scaleX(1);
   }
   
-  
+
+/* --------------------------------aside---------------------------------- */
+
+
   .titulo2 {
     height: 50px;
     width: 100%;
     color: white;
-    border: 1px solid black;
-    margin-top: 5px;
     text-align: center;
-  }
+  } 
   
   .titulo2 p {
     font-size: 30px;
@@ -73,8 +78,8 @@
     width: 100%;
     text-decoration: none;
     text-transform: uppercase;
-   
     justify-content: center;
+    padding-left: 10px;
   }
   
   .lateral a {
@@ -102,32 +107,6 @@
   
   .lateral a:hover::before {
     transform: scaleX(1);
-  }
-  
-  
-  .titulo2 {
-    height: 50px;
-    width: 100%;
-    color: white;
-    border: 1px solid black;
-    margin-top: 5px;
-    text-align: center;
-  }
-  
-  .titulo2 p {
-    font-size: 30px;
-  }
-  
-  .mesa {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .mesa a img {
-    height: 50px;
-    width: 50px;
   }
   
   /* --------------------------------calculadora---------------------------------- */
