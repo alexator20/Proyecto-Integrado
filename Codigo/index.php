@@ -61,7 +61,7 @@ $repository = new productRepository;
 		<div class="container-fluid ">
 			<div class="row text-center vh-100">
 				<!-- LATERAL -->
-				<div class="col-2 mesa bg-dark lateral2 lateral text-center">
+				<div class="col-2 bg-dark lateral2 lateral text-center">
 					<ul>
 						<li style="margin-top: 30px;"><a href="/categoria.php?categoria=Combos">Ofertas y Combos</a></li>
 						<li style="margin-top: 30px;"><a href="/categoria.php?categoria=Cafes">Cafes e Infusiones</a></li>
