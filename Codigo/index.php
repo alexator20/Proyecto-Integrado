@@ -77,14 +77,16 @@ $repository = new productRepository;
 				<!-- CENTRO -->
 				<div class="col-xxl-8 col-lg-10" style="border-right:2px solid black;">
 					<div class="container text-center">
-						<div class="row text-center ">
+						<div class="text-center">
 							<?php
 							if ($mesa == "") {
 
 								print "<h1> Selecciona un numero de Mesa</h1>";
 							} else {
 								print "<h2>MESA $mesa</h2>";
+								print "<div class='row row-cols-3 text-center'>";
 								print $repository->drawProductCard($repository->getAllCategoryProduct($category));
+								print "</div>";
 							}
 
 							?>

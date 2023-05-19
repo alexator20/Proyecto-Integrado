@@ -1,6 +1,6 @@
 .lateral2 ul {
   margin-left: -40px;
-  /* margin-top: -50px; */
+  /*margin-top: -50px;*/
 }
 
 .lateral li {
@@ -190,8 +190,6 @@
 /* --------------------------------centro----------------------------------- */
 
 .tarjetas {
-  margin: 10px;
-  padding-left: 40px;
   padding-top: 20px;
 }
 
