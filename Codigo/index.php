@@ -92,6 +92,7 @@ $repository = new productRepository;
 								
 							}else {
 								print "<h2>MESA $mesa</h2>";
+								print "<h3>$idTicket</h3>";
 								print $repository->drawProductCard($repository->getAllCategoryProduct($category));
 							}
 								

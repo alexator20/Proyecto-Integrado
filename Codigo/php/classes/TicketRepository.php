@@ -21,7 +21,7 @@ class TicketRepository Extends Connection{
         $result = [];
         $stmt = $this->conn->query("SELECT * FROM ticket WHERE cod_ticket= $cod_ticket");
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $result[] = new Ticket($row['cod_ticket'], $row['hora'],$row['fecha'],$row['num_mesa'],$row['cod_empleado']);
+            $result[] = new Ticket($row['cod_ticket'], $row['hora'],$row['fecha'],$row['num_mesa'],$row['cod_empleado'],$row['estado']);
         }
         return $result;
     }
@@ -60,8 +60,16 @@ class TicketRepository Extends Connection{
     $ticketId = $this->conn->lastInsertId();  // Obtener el ID del ticket insertado
     
     // Crear un nuevo objeto ticket con los datos necesarios y devolverlo
-    $ticket = new Ticket($ticketId,$hora, $fecha, $mesa,1);
+    $ticket = new Ticket($ticketId,$hora, $fecha, $mesa,1,1);
     return $ticket;
 }
 
+public function insertPreticket(int $precio,int $cod_producto, int $cod_ticket){
+
+    $this->conn->query("SELECT `cod_producto`, `cod_ticket` FROM `producto_servido` WHERE 1")
+
+    if (condition) {
+        # code...
+    }
+}
 }
