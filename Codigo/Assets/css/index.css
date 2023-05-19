@@ -39,15 +39,16 @@
     transform: scaleX(1);
   }
   
-  
+
+/* --------------------------------aside---------------------------------- */
+
+
   .titulo2 {
     height: 50px;
     width: 100%;
     color: white;
-    border: 1px solid black;
-    margin-top: 5px;
     text-align: center;
-  }
+  } 
   
   .titulo2 p {
     font-size: 30px;
@@ -102,32 +103,6 @@
   
   .lateral a:hover::before {
     transform: scaleX(1);
-  }
-  
-  
-  .titulo2 {
-    height: 50px;
-    width: 100%;
-    color: white;
-    border: 1px solid black;
-    margin-top: 5px;
-    text-align: center;
-  }
-  
-  .titulo2 p {
-    font-size: 30px;
-  }
-  
-  .mesa {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .mesa a img {
-    height: 50px;
-    width: 50px;
   }
   
   /* --------------------------------calculadora---------------------------------- */
