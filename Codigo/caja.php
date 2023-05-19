@@ -54,15 +54,15 @@ $security->checkLoggedIn();
 				<!-- LATERAL -->
 				<div class="col-2 mesa bg-dark lateral2 lateral text-center">
 					<ul>
-						<li style="margin-top: 30px;"><a href="./ofertas.html">Ofertas y Combos</a></li>
-						<li style="margin-top: 30px;"><a href="./cafes.html">Cafes e Infusiones</a></li>
-						<li style="margin-top: 30px;"><a href="./cervezas.html">Cervezas</a></li>
-						<li style="margin-top: 30px;"><a href="./refrescos.html">Refrescos</a></li>
-						<li style="margin-top: 30px;"><a href="./licores.html">Licores</a></li>
-						<li style="margin-top: 30px;"><a href="./bolleria.html">Bolleria</a></li>
-						<li style="margin-top: 30px;"><a href="./tostadas.html">Tostadas</a></li>
-						<li style="margin-top: 30px;"><a href="./bocadillos.html">Bocadillos </a></li>
-						<li style="margin-top: 30px;"><a href="./tapas.html">Tapas</a></li>
+						<li style="margin-top: 30px;"><a href="./ofertas.php">Ofertas y Combos</a></li>
+						<li style="margin-top: 30px;"><a href="./cafes.php">Cafes e Infusiones</a></li>
+						<li style="margin-top: 30px;"><a href="./cervezas.php">Cervezas</a></li>
+						<li style="margin-top: 30px;"><a href="./refrescos.php">Refrescos</a></li>
+						<li style="margin-top: 30px;"><a href="./licores.php">Licores</a></li>
+						<li style="margin-top: 30px;"><a href="./bolleria.php">Bolleria</a></li>
+						<li style="margin-top: 30px;"><a href="./tostadas.php">Tostadas</a></li>
+						<li style="margin-top: 30px;"><a href="./bocadillos.php">Bocadillos </a></li>
+						<li style="margin-top: 30px;"><a href="./tapas.php">Tapas</a></li>
 					</ul>
 				</div>
 				<!-- CENTRO -->
