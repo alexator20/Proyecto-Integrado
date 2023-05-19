@@ -9,4 +9,4 @@ $repository = new TicketRepository;
 $ticket = $repository->insertTicket($_SESSION["mesa"]);
 
 $_SESSION["idTicket"] = $ticket->getCod_ticket();
-    header("location: index.php");
+header("location: index.php");

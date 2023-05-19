@@ -6,7 +6,7 @@ $security->checkLoggedIn(); -->
 require_once __DIR__ . "/php/autoloader.php";
 $empleado = new Empleado();
 
-$conexion=mysqli_connect('localhost','root','','tpvdatabase')
+$conexion = mysqli_connect('localhost', 'root', '', 'tpvdatabase')
 
 
 ?>
@@ -59,41 +59,41 @@ $conexion=mysqli_connect('localhost','root','','tpvdatabase')
 
 	<!-- MAIN -->
 	<main class="vh-100">
-	<div class="container-fluid">
+		<div class="container-fluid">
 			<div class="col-12">
-			<div class="container-fluid d-flex justify-content-center">
-				<table>
-					<tr class="headerTabla">
-						<td>Nombre</td>
-						<td>Apellidos</td>
-						<td>Correo</td>
-						<td>Direccion</td>
-						<td>Foto</td>
-					</tr>
-
-					<?php
-					$sql = "SELECT nombre, apellidos, correo, direccion, foto FROM empleado";
-					$result = mysqli_query($conexion, $sql);
-
-					while ($mostrar = mysqli_fetch_array($result)) {
-						?>
-						<tr>
-							<td><?php echo $mostrar['nombre'] ?></td>
-							<td><?php echo $mostrar['apellidos'] ?></td>
-							<td><?php echo $mostrar['correo'] ?></td>
-							<td><?php echo $mostrar['direccion'] ?></td>
-							<td><?php echo $mostrar['foto'] ?></td>
+				<div class="container-fluid d-flex justify-content-center">
+					<table>
+						<tr class="headerTabla">
+							<td>Nombre</td>
+							<td>Apellidos</td>
+							<td>Correo</td>
+							<td>Direccion</td>
+							<td>Foto</td>
 						</tr>
-					<?php
-					}
-					?>
-				</table>
 
-				</div>				
+						<?php
+						$sql = "SELECT nombre, apellidos, correo, direccion, foto FROM empleado";
+						$result = mysqli_query($conexion, $sql);
+
+						while ($show = mysqli_fetch_array($result)) {
+						?>
+							<tr>
+								<td><?php echo $show['nombre'] ?></td>
+								<td><?php echo $show['apellidos'] ?></td>
+								<td><?php echo $show['correo'] ?></td>
+								<td><?php echo $show['direccion'] ?></td>
+								<td><?php echo $show['foto'] ?></td>
+							</tr>
+						<?php
+						}
+						?>
+					</table>
+
+				</div>
 			</div>
 		</div>
-	</div>
-</main>
+		</div>
+	</main>
 
 	<script src="./Assets/js/index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
