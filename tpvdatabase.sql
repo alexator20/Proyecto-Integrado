@@ -45,7 +45,7 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada + cafe
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Curasan + cafe/zumo',2.50,"Combos","curasancafe.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada Especial + cafe/zumo',2.50,"Combos","tostadaespecial.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Tostada + cafe + zumo',3.50,"Combos","tostadacafezumo.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Gofre/Creppe + Cafe',3.50,"Combos","combo.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ( 'Gofre/Creppe + Cafe',3.50,"Combos","gofre.jpg");
 
 # CAFES E INFUSIONES
 
@@ -100,7 +100,7 @@ INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ( 'Copa Cutty, J&B 
 
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Mini', 0.60, "Bolleria","curasanmini.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Mini Choco', 0.60, "Bolleria","minichoco.jpg");
-INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Grande', 1.50, "Bolleria","minichoco.jpg");
+INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Curasan Grande', 1.50, "Bolleria","curasangrande.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Napolitana York Queso', 1.60, "Bolleria","napolitanayork.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Napolitana Chocolate', 1.60, "Bolleria","napolitanachocolate.jpg");
 INSERT INTO producto (nombre,precio,categoria,imagen) VALUES ('Pisto', 1.60, "Bolleria","pisto.jpg");
@@ -115,7 +115,7 @@ INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Mantequ
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate',2.50,"Tostadas","tostadatomate.png");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate y Queso Fresco',3.50,"Tostadas","tostadatomatequeso.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Tomate y Jamon',3.50,"Tostadas","tostadajamon.jpg");
-INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Sobrasada y Queso',3.50,"Tostadas","photo3.jpg");
+INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Sobrasada y Queso',3.50,"Tostadas","tostadasobrasada.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada de Pavo',3.50,"Tostadas","tostadapavo.jpg");
 INSERT INTO producto ( nombre, precio,categoria,imagen) VALUES ('Tostada Atun Olivas',3.50,"Tostadas","photo5.jpg");
 
