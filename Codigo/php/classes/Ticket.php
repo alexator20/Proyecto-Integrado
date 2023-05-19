@@ -118,4 +118,12 @@ $this->cod_empleado = $cod_empleado;
 
 return $this;
 }
+
+/**
+ * Get the value of estado
+ */
+public function getEstado(): int
+{
+return $this->estado;
+}
 }
