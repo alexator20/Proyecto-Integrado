@@ -1,5 +1,5 @@
 <?php
-class  ticket extends Connection{
+class  ticket {
 
 private int $cod_ticket;
 private string $hora;
