@@ -78,22 +78,21 @@ $tickRepository = new TicketRepository;
 				<!-- CENTRO -->
 				<div class="col-xxl-8 col-lg-10" style="border-right:2px solid black;">
 					<div class="container text-center">
-						<div class="text-center">
-							<?php
+						<div class="row text-center ">
+						<?php
 							if ($mesa == "") {
 
 								print "<h1> Selecciona un numero de Mesa</h1>";
-							} else {
-								print "<h2>MESA $mesa</h2>";
-								print "<h3>$idTicket</h3>";
+								
+							}else {
+								print "<h2>MESA $mesa</h2>";	
 								print $proRepository->drawProductCard($proRepository->getAllCategoryProduct($category));
 							}
-
-							?>
+								
+						?>
 						</div>
 					</div>
 				</div>
-
 				<!-- ASIDE -->
 				<div class="col-xxl-2 col-lg-12 text-center">
 
@@ -174,11 +173,11 @@ $tickRepository = new TicketRepository;
 					<!-- Ticket -->
 					<div class="row ticket">
 						<div class="col-12 text-center titulo2 bg-dark">
-							<p> Ticket </p>
+							<p>Ticket<?php print "   $idTicket"?></p>
 						</div>
 						<div class="">
 							
-							<?php $tickRepository->drawPreticket($idTicket)?>
+							<?php print $tickRepository->drawPreticket($idTicket)?>
 						</div>					
 					</div>
 				</div>

@@ -85,17 +85,18 @@ class TicketRepository extends Connection
     }
 
 
-    public function drawPreticket(int $idTicket)
+    public function drawPreticket(int $idTicket):string
     {
-
-        print "<p>T $idTicket</p>";
+        $output = "";
         $sql = "SELECT producto.nombre, producto_servido.cantidad, producto_servido.cod_ticket FROM producto JOIN producto_servido ON producto.cod_producto = producto_servido.cod_producto;";
         $query = $this->conn->query($sql);
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             if ($idTicket == $row["cod_ticket"]) {
-                print "<p>" . $row["nombre"] . " -- " . $row["cantidad"] . "</p>";
+                $output .= "";
+                $output .= "<p>" . $row["nombre"] . " -- " . $row["cantidad"] . "</p>";
             }
         }
+        return $output;
     }
 
     public function testTicket(string $mesa)
