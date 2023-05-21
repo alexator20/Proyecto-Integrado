@@ -7,7 +7,7 @@ $security->checkLoggedIn();
 
 $category = isset($_SESSION["categoria"]) ? $_SESSION["categoria"] : "Cafes";
 $mesa = isset($_SESSION["mesa"]) ? $_SESSION["mesa"] : "";
-$idTicket = isset($_SESSION["idTicket"]) ? $_SESSION["idTicket"] : "";
+$idTicket = isset($_SESSION["idTicket"]) ? $_SESSION["idTicket"] : 0;
 
 $proRepository = new productRepository;
 $tickRepository = new TicketRepository;
@@ -48,7 +48,7 @@ $tickRepository = new TicketRepository;
 						<li class="nav-item">
 							<a class="nav-link" href="caja.php">CAJA</a>
 						</li>
-						<a class="navbar-brand log-out" href="register.php">
+						<a class="navbar-brand log-out" href="destroySession.php">
 							<img src="./Assets/imgs/log-out.png" alt="Logo" width="40" height="40">
 						</a>
 					</ul>
