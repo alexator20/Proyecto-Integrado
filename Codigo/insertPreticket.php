@@ -8,4 +8,4 @@ $id_ticket = (int) $_SESSION["idTicket"];
 $repository = new TicketRepository;
 $repository->insertPreticket($id_product,$id_ticket);
 
-
+header("location: index.php");
