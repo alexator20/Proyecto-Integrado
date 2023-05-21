@@ -72,7 +72,6 @@ $result = mysqli_query($conexion, $sql);
                             <td>Apellidos</td>
                             <td>Correo</td>
                             <td>Direccion</td>
-                            <td>Foto</td>
                             <td>Acciones</td>
                         </tr>
 
@@ -84,7 +83,6 @@ $result = mysqli_query($conexion, $sql);
                                 <td><?php echo $mostrar['apellidos'] ?></td>
                                 <td><?php echo $mostrar['correo'] ?></td>
                                 <td><?php echo $mostrar['direccion'] ?></td>
-                                <td><?php echo $mostrar['foto'] ?></td>
                                 <td>
                                     <form method="POST" action="editar.php">
                                         <input type="hidden" name="cod_empleado" value="<?php echo $mostrar['cod_empleado']; ?>">
