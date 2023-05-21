@@ -57,7 +57,7 @@ class TicketRepository extends Connection
         $stmt->bindParam(':num_mesa', $mesa);
         $stmt->bindParam(':hora', $hora);
         $stmt->bindValue(':estado', 1);
-        $stmt->bindValue(':cod_empleado',1);
+        $stmt->bindValue(':cod_empleado', 1);
         $stmt->execute();
 
         $ticketId = $this->conn->lastInsertId();  // Obtener el ID del ticket insertado
@@ -88,7 +88,7 @@ class TicketRepository extends Connection
     public function drawPreticket(int $idTicket)
     {
 
-        print "<p>Mesa $idTicket</p>";
+        print "<p>T $idTicket</p>";
         $sql = "SELECT producto.nombre, producto_servido.cantidad, producto_servido.cod_ticket FROM producto JOIN producto_servido ON producto.cod_producto = producto_servido.cod_producto;";
         $query = $this->conn->query($sql);
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
@@ -98,11 +98,18 @@ class TicketRepository extends Connection
         }
     }
 
-    public function testTicket(int $idTicket)
+    public function testTicket(string $mesa)
     {
-        $sql = "SELECT estado FROM ticket WHERE cod_ticket = " . $_SESSION["idTicket"] . "";
+        $sql = "SELECT * FROM ticket WHERE num_mesa = '$mesa' AND estado = 1";
+        $result = $this->conn->query($sql);
+        return $result;
+    }
+
+    public function lastIdTable(string $mesa) {
+
+        $sql = "SELECT MAX(cod_ticket) as cod_ticket FROM ticket WHERE num_mesa = '$mesa'";
         $query = $this->conn->query($sql);
         $row = $query->fetch(PDO::FETCH_ASSOC);
-        return $row["estado"];
+        return $row;
     }
 }

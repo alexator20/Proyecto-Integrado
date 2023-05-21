@@ -3,23 +3,25 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
 require_once __DIR__ . "/php/autoloader.php";
 
 
-$_SESSION["mesa"] = $_GET["mesa"];
+$_SESSION["mesa"] = (string) $_GET["mesa"];
 $_SESSION["categoria"] = "Cafes";
 
 $repository = new TicketRepository;
 
-$checkTicket = $repository->testTicket($_SESSION["idTicket"]);
 
-if (!isset($_SESSION["idTicket"]) || (isset($_SESSION["idTicket"]) && $checkTicket == 0)) {
+$result = $repository->testTicket($_SESSION["mesa"]);
 
+if ($result->rowCount() == 0) {
+    
     $ticket = $repository->insertTicket($_SESSION["mesa"]);
 }else {
-    $ticket = $repository->getTicket($_SESSION["idTicket"]);
+    $arr = $repository->lastIdTable($_SESSION["mesa"]);
+    $ticket = $repository->getTicket($arr["cod_ticket"]);
 }
 
 
 
+    $_SESSION["idTicket"] = $ticket->getCod_ticket();
 
 
-$_SESSION["idTicket"] = $ticket->getCod_ticket();
 header("location: index.php");
