@@ -137,7 +137,7 @@ INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`, `categoria`, `imagen
 (68, 'Pincho de Tortilla', 3.50, 'Tapas', 'pinchotortilla.jpg'),
 (69, 'Habas Picantonas', 3.50, 'Tapas', 'habas.jpg'),
 (70, 'Mollejitas Morunas', 3.50, 'Tapas', 'mollejas.jpg'),
-(71, 'Esgarraet o Ajoarrie', 3.50, 'Tapas', 'croquetas.jpg'),
+(71, 'Croquetas', 3.50, 'Tapas', 'croquetas.jpg'),
 (72, 'Bravas', 3.50, 'Tapas', 'bravas.jpg'),
 (73, 'Morro', 3.50, 'Tapas', 'morro.jpg'),
 (74, 'Oreja Adobada', 3.50, 'Tapas', 'orejacerdo.jpg'),
