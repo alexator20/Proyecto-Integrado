@@ -45,19 +45,16 @@ class productRepository extends Connection
         foreach ($data as $key) {
             $output .= "<div class='col tarjetas text-center'>";
             $output .= "<div class='card' style='width: 14rem; height: 17rem;'>";
-            $output .= "<img src='/Assets/imgs/Imagenes_Productos/" . $key->getCategoria() . "/" . $key->getImagen() . "' class='card-img-top' alt='" . $key->getNombre() . "'>";
+            $output .= "<img src='Assets/imgs/Imagenes_Productos/" . $key->getCategoria() . "/" . $key->getImagen() . "' class='card-img-top' alt='" . $key->getNombre() . "'>";
             $output .= "<div class='card-body'>";
             $output .= "<h6 class='card-title'>" . $key->getNombre() . "</h6>";
 
             if ($key->getCategoria() == "Bocadillos") {
-                $output .= "<a href='/Codigo/insertPreticket.php?id=" . $key->getCodProducto() . "' class='btn btn-dark'>Mini</a>";
+                
+                $output .= "<a href='/insertPreticket.php?id=" . $key->getCodProducto() . "' class='btn btn-dark'>Mini</a>";
+                $output .= "<a href='/insertPreticket.php?precio=1 & id=" . $key->getCodProducto() . "' class='btn btn-dark'>Max</a>";
             } else {
-                $output .= "<a href=/Codigo/insertPreticket.php?id=" . $key->getCodProducto() . "' class='btn btn-dark'>Añadir</a>";
-            }
-
-            if ($key->getCategoria() == "Bocadillos") {
-
-                $output .= "<a href='/Codigo/insertPreticket.php?precio=1 & id=" . $key->getCodProducto() . "' class='btn btn-dark'>Max</a>";
+                $output .= "<a href='/insertPreticket.php?id=" . $key->getCodProducto() . "' class='btn btn-dark'>Añadir</a>";
             }
             $output .= "</div></div></div>";
         }

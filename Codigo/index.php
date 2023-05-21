@@ -9,7 +9,8 @@ $category = isset($_SESSION["categoria"]) ? $_SESSION["categoria"] : "Cafes";
 $mesa = isset($_SESSION["mesa"]) ? $_SESSION["mesa"] : "";
 $idTicket = isset($_SESSION["idTicket"]) ? $_SESSION["idTicket"] : "";
 
-$repository = new productRepository;
+$proRepository = new productRepository;
+$tickRepository = new TicketRepository;
 ?>
 
 <!DOCTYPE html>
@@ -84,9 +85,8 @@ $repository = new productRepository;
 								print "<h1> Selecciona un numero de Mesa</h1>";
 							} else {
 								print "<h2>MESA $mesa</h2>";
-								print "<div class='row row-cols-3 text-center'>";
-								print $repository->drawProductCard($repository->getAllCategoryProduct($category));
-								print "</div>";
+								print "<h3>$idTicket</h3>";
+								print $proRepository->drawProductCard($proRepository->getAllCategoryProduct($category));
 							}
 
 							?>
@@ -177,8 +177,9 @@ $repository = new productRepository;
 							<p> Ticket </p>
 						</div>
 						<div class="">
-							<p>Mesa 1</p>
-						</div>
+							
+							<?php $tickRepository->drawPreticket($idTicket)?>
+						</div>					
 					</div>
 				</div>
 			</div>
