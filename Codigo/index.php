@@ -170,7 +170,7 @@ $tickRepository = new TicketRepository;
 						</div>
 					</div>
 					<!-- Ticket -->
-					<div class="row ticket">
+					<div class="row">
 						<div class="col-12 text-center titulo2 bg-dark">
 							<p>Ticket<?php print "   $idTicket" ?></p>
 						</div>
@@ -178,7 +178,7 @@ $tickRepository = new TicketRepository;
 							<?php print $tickRepository->drawPreticket($idTicket) ?>
 
 
-							<button id="open-popup">detalles de ticket</button>
+							<button class="btn btn-dark bticket" id="open-popup">Detalles del ticket</button>
 							<div class="popup-overlay"></div>
 							<div class="popup">
 								<button id="close-popup" style="float:right;margin-bottom:20px;">X</button>
@@ -187,7 +187,7 @@ $tickRepository = new TicketRepository;
 									<?= $tickRepository->drawTicket($idTicket) ?>
 								</p>
 								<br>
-								<a href="cerradoTicket.php?id=<?php echo $idTicket; ?>"><button>Enviar</button></a>
+								<a href="cerradoTicket.php?id=<?php echo $idTicket; ?>"><button class="btn btn-dark">Enviar</button></a>
 								</p>
 							</div>
 						</div>

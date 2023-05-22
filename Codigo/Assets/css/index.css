@@ -326,3 +326,12 @@ button {
   text-align: center; font-size: 40px;
 
 }
+
+.ticket{
+  padding-top: 20px;
+  margin-left: 2px;
+}
+
+.bticket{
+  margin-top: 20px;
+}
