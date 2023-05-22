@@ -6,7 +6,9 @@
 -- Tiempo de generación: 22-05-2023 a las 12:26:32
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
-
+DROP DATABASE IF EXISTS tpvdatabase;
+CREATE DATABASE tpvdatabase;
+USE tpvdatabase;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -137,7 +139,7 @@ INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`, `categoria`, `imagen
 (68, 'Pincho de Tortilla', 3.50, 'Tapas', 'pinchotortilla.jpg'),
 (69, 'Habas Picantonas', 3.50, 'Tapas', 'habas.jpg'),
 (70, 'Mollejitas Morunas', 3.50, 'Tapas', 'mollejas.jpg'),
-(71, 'Esgarraet o Ajoarrie', 3.50, 'Tapas', 'croquetas.jpg'),
+(71, 'Croquetas', 3.50, 'Tapas', 'croquetas.jpg'),
 (72, 'Bravas', 3.50, 'Tapas', 'bravas.jpg'),
 (73, 'Morro', 3.50, 'Tapas', 'morro.jpg');
 

@@ -1,4 +1,7 @@
 <?php
+$security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn();
 $conexion = mysqli_connect('localhost', 'root', '', 'tpvdatabase');
 
 if (isset($_GET['delete_id'])) {
@@ -50,7 +53,7 @@ $result = mysqli_query($conexion, $sql);
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="caja.php">CAJA</a>
+							<a class="nav-link" href="caja.php" onclick="return false;">CAJA</a>
 						</li>
 						<a class="navbar-brand log-out" href="register.php">
 							<img src="./Assets/imgs/log-out.png" alt="Logo" width="40" height="40">
@@ -91,7 +94,7 @@ $result = mysqli_query($conexion, $sql);
                                         </button>
                                     </form>
                                     <form method="POST" action="?delete_id=<?php echo $mostrar['cod_empleado']; ?>">
-                                        <button type="submit" class="btn btn-danger btn-sm buttonEmpl">
+                                        <button type="submit" class="btn borrar btn-sm buttonEmpl">
                                             <i class="fas fa-trash"></i> Borrar
                                         </button>
                                     </form>

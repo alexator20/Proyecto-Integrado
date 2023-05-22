@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__ . "/php/autoloader.php";
-$conn = new Connection;
+$security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn();
+$conexion = mysqli_connect('localhost', 'root', '', 'tpvdatabase');
 
 if (isset($_POST['update'])) {
     $cod_empleado = $_POST['cod_empleado'];
@@ -66,7 +68,7 @@ if (isset($_POST['cod_empleado'])) {
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="caja.php">CAJA</a>
+							<a class="nav-link" href="caja.php" onclick="return false;">CAJA</a>
 						</li>
 						<a class="navbar-brand log-out" href="register.php">
 							<img src="./Assets/imgs/log-out.png" alt="Logo" width="40" height="40">
