@@ -85,6 +85,7 @@ if (isset($_POST['cod_empleado'])) {
 
     <!-- MAIN -->
     <main class="vh-100">
+<<<<<<< HEAD
         <form method="POST" action="">
             <div class="container-fluid">
                 <div class="col-12">
@@ -108,7 +109,31 @@ if (isset($_POST['cod_empleado'])) {
                     <div class="botonEnviar">
                         <button style="height:50px" type="submit" name="update" class="btn btn-dark">Actualizar</button>
                     </div>
+=======
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="container-fluid d-flex justify-content-center">
+                    <table>
+                        <tr class="headerTabla">
+                            <td>Nombre</td>
+                            <td>Apellidos</td>
+                            <td>Correo</td>
+                            <td>Direccion</td>
+                        </tr>
+                        <tr>
+                        <td><input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $mostrar['nombre']; ?>" required></td>
+                        <td><input type="text" class="form-control" id="apellidos" name="apellidos" value="<?php echo $mostrar['apellidos']; ?>" required></td>
+                        <td><input type="email" class="form-control" id="correo" name="correo" value="<?php echo $mostrar['correo']; ?>" required></td>
+                        <td><input type="text" class="form-control" id="direccion" name="direccion" value="<?php echo $mostrar['direccion']; ?>" required></td>
+                        </tr>                       
+                    </table>
+                    
+>>>>>>> 96ac9af721a8c02e37bc05186429cee7588e351f
                 </div>
+            <div class="botonEnviar"> 
+            <button style="height:50px " type="submit" name="update" class="btn btn-dark">Actualizar</button>
+            </div>
+              
             </div>
         </form>
     </main>
