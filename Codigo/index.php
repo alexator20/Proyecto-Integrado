@@ -8,9 +8,9 @@ $security->checkLoggedIn();
 $category = isset($_SESSION["categoria"]) ? $_SESSION["categoria"] : "Cafes";
 $mesa = isset($_SESSION["mesa"]) ? $_SESSION["mesa"] : "";
 $idTicket = isset($_SESSION["idTicket"]) ? $_SESSION["idTicket"] : 0;
-
 $proRepository = new productRepository;
 $tickRepository = new TicketRepository;
+
 ?>
 
 <!DOCTYPE html>
@@ -79,17 +79,16 @@ $tickRepository = new TicketRepository;
 				<div class="col-xxl-8 col-lg-10" style="border-right:2px solid black;">
 					<div class="container text-center">
 						<div class="row text-center ">
-						<?php
+							<?php
 							if ($mesa == "") {
 
 								print "<h1> Selecciona un numero de Mesa</h1>";
-								
-							}else {
-								print "<h2>MESA $mesa</h2>";	
+							} else {
+								print "<h2>MESA $mesa</h2>";
 								print $proRepository->drawProductCard($proRepository->getAllCategoryProduct($category));
 							}
-								
-						?>
+
+							?>
 						</div>
 					</div>
 				</div>
@@ -171,18 +170,33 @@ $tickRepository = new TicketRepository;
 						</div>
 					</div>
 					<!-- Ticket -->
-					<div class="row ticket">
+					<div class="row">
 						<div class="col-12 text-center titulo2 bg-dark">
-							<p>Ticket<?php print "   $idTicket"?></p>
+							<p>Ticket<?php print "   $idTicket" ?></p>
 						</div>
 						<div class="row ticket">
-							<?php print $tickRepository->drawPreticket($idTicket)?>
-						</div>					
+							<?php print $tickRepository->drawPreticket($idTicket) ?>
+
+
+							<button class="btn btn-dark bticket" id="open-popup">Detalles del ticket</button>
+							<div class="popup-overlay"></div>
+							<div class="popup">
+								<button id="close-popup" style="float:right;margin-bottom:20px;">X</button>
+								<h2><?= "TICKET" . "\n" . $mesa ?></h2>
+								<p>
+									<?= $tickRepository->drawTicket($idTicket) ?>
+								</p>
+								<br>
+								<a href="cerradoTicket.php?id=<?php echo $idTicket; ?>"><button class="btn btn-dark">Enviar</button></a>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 	</main>
 	<script src="./Assets/js/index.js"></script>
+	<script src="./Assets/js/PopUp.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 

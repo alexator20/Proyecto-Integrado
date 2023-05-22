@@ -28,26 +28,6 @@ class TicketRepository extends Connection
     }
 
 
-
-    public function drawTickets(array $list): string
-    {
-        $output = "";
-        foreach ($list as $detalles) {
-            $cod_ticket = is_null($detalles->getCod_ticket()) ? "Unknown" : $detalles->getHora();
-            $hora = is_null($detalles->getHora()) ? "-.--" : $detalles->getHora();
-            $fecha = is_null($detalles->getFecha()) ? "-.--" : ($detalles->getfecha());
-            $output .= "<tr>";
-            $output .= "    <td><strong>" . $detalles->get() . "</strong>, " . $hora. "<br>" . $fecha .".</td>";
-/*             $output .= "<td>".
-                (is_null($detalles->getImg()) ?
-                    "":
-                    "<img style='width:25px;' src='/assets/images/".$detalles->getImg()."'>")
-                ."</td>"; */
-            $output .= "</tr>";
-        }
-        return $output;
-    }
-
     public function insertTicket(string $mesa): Ticket
     {
         $stmt = $this->conn->prepare("INSERT INTO ticket (hora,fecha, num_mesa, estado,cod_empleado) VALUES (:hora, :fecha, :num_mesa, :estado, :cod_empleado)");
@@ -115,4 +95,42 @@ class TicketRepository extends Connection
         $row = $query->fetch(PDO::FETCH_ASSOC);
         return $row;
     }
+
+
+    
+    public function drawTicket(int $idTicket):string
+    {
+        
+        $output = "";   
+        $total = 0; // Variable para almacenar el total de los precios
+        $sql = "SELECT producto.nombre,producto.precio, producto_servido.cantidad, producto_servido.cod_ticket FROM producto JOIN producto_servido ON producto.cod_producto = producto_servido.cod_producto;";
+        $query = $this->conn->query($sql);
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+            if ($idTicket == $row["cod_ticket"]) {
+                $output .= "";
+                $output .= "<p>" . $row["nombre"] . " -- " . $row["cantidad"] . $row["precio"]."€". "</p>";
+                $subtotal = $row["cantidad"] * $row["precio"];
+            $total += $subtotal; // Agrega el subtotal al total
+            
+            }
+            
+        } 
+        $output .= "<p><strong>Total: " . $total . "€</strong></p>";
+        return $output;
+       
+    }
+
+    public function closeTicket(int $idTicket) {
+
+        $sql = "SELECT estado FROM ticket WHERE cod_ticket = $idTicket";
+        $query = $this->conn->query($sql);
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        if ($row["estado"] == 1) {
+            $sql = "UPDATE ticket SET estado = 0 WHERE cod_ticket = $idTicket";
+            $result = $this->conn->query($sql);
+        }
+    }
 }
+
+
+

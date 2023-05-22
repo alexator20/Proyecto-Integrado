@@ -69,30 +69,32 @@ class Security extends Connection
             return false;
         }
     }
-}
 
-function forgotPassword($email, $new_password)
-{
+    public function updateWorker(string $data) {
 
+        if (isset($_POST[$data])) {
+            $nombre = $_POST['nombre'];
+            $apellidos = $_POST['apellidos'];
+            $correo = $_POST['correo'];
+            $direccion = $_POST['direccion'];
+        
+            // Realiza la operación de actualización del campo en la base de datos
+            $sql = "UPDATE empleado SET nombre = ?, apellidos = ?, correo = ?, direccion = ? WHERE direccion = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(1,$nombre);
+            $stmt->bindParam(2,$apellidos);
+            $stmt->bindParam(3,$correo);
+            $stmt->bindParam(4,$direccion);
+            $stmt->bindParam(5,$direccion);
+            $stmt->execute();
 
-    // Crear una consulta SQL para buscar el usuario por su dirección de correo electrónico
-    $sql = "SELECT * FROM empleado WHERE correo='$email'";
-
-    // Ejecutar la consulta y almacenar el resultado en una variable
-    $result = $conn->query($sql);
-
-    // Comprobar si se encontró un usuario con ese correo electrónico
-    if ($result->num_rows > 0) {
-        // Crear una consulta SQL para actualizar la contraseña del usuario
-        $sql = "UPDATE empleado SET contrasenya='$new_password' WHERE correo='$email'";
-
-        // Ejecutar la consulta
-        if ($conn->query($sql) === TRUE) {
-            echo "Contraseña actualizada correctamente";
-        } else {
-            echo "Error al actualizar la contraseña: " . $conn->error;
+        
+            // Redirecciona a la página de empleados.php después de la actualización
+            header("Location: empleados.php");
+            exit();
         }
-    } else {
-        echo "No se encontró ningún usuario con ese correo electrónico";
+
     }
 }
+
+
