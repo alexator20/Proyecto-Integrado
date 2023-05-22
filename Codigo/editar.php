@@ -1,4 +1,7 @@
 <?php
+$security = new Security();
+//para comprobar si estas logeado
+$security->checkLoggedIn();
 $conexion = mysqli_connect('localhost', 'root', '', 'tpvdatabase');
 
 if (isset($_POST['update'])) {
