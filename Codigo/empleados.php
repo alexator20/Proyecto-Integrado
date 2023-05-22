@@ -96,7 +96,7 @@ $result = mysqli_query($conexion, $sql);
                                         </button>
                                     </form>
                                     <form method="POST" action="?delete_id=<?php echo $mostrar['cod_empleado']; ?>">
-                                        <button type="submit" class="btn borrar btn-sm buttonEmpl">
+                                        <button type="submit" class="btn borrar btn-sm buttonEmpl buttBorrar">
                                             <i class="fas fa-trash"></i> Borrar
                                         </button>
                                     </form>
