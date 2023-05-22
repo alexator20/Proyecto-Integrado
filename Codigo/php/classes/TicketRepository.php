@@ -119,6 +119,17 @@ class TicketRepository extends Connection
         return $output;
        
     }
+
+    public function closeTicket(int $idTicket) {
+
+        $sql = "SELECT estado FROM ticket WHERE cod_ticket = $idTicket";
+        $query = $this->conn->query($sql);
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        if ($row["estado"] == 1) {
+            $sql = "UPDATE ticket SET estado = 0 WHERE cod_ticket = $idTicket";
+            $result = $this->conn->query($sql);
+        }
+    }
 }
 
 

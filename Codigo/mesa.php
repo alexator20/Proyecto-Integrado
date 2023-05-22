@@ -12,16 +12,16 @@ $repository = new TicketRepository;
 $result = $repository->testTicket($_SESSION["mesa"]);
 
 if ($result->rowCount() == 0) {
-    
+
     $ticket = $repository->insertTicket($_SESSION["mesa"]);
-}else {
+} else {
     $arr = $repository->lastIdTable($_SESSION["mesa"]);
     $ticket = $repository->getTicket($arr["cod_ticket"]);
 }
 
 
 
-    $_SESSION["idTicket"] = $ticket->getCod_ticket();
+$_SESSION["idTicket"] = $ticket->getCod_ticket();
 
 
 header("location: index.php");

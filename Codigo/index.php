@@ -8,20 +8,9 @@ $security->checkLoggedIn();
 $category = isset($_SESSION["categoria"]) ? $_SESSION["categoria"] : "Cafes";
 $mesa = isset($_SESSION["mesa"]) ? $_SESSION["mesa"] : "";
 $idTicket = isset($_SESSION["idTicket"]) ? $_SESSION["idTicket"] : 0;
-$codEmpleado=isset($_SESSION["codEmpleado"]) ? $_SESSION["codEmpleado"] : "0";
 $proRepository = new productRepository;
 $tickRepository = new TicketRepository;
 
-
-if (isset($_POST['close-popup'])) {
-    // Actualizar la variable de comprobación a 0 en la base de datos
-    $updateSql = "UPDATE ticket SET estado = 0 WHERE id = 1"; // Reemplaza "tabla_tickets" con el nombre de tu tabla y "id" con el campo que identifica el ticket
-    if ($conn->query($updateSql) === TRUE) {
-        $comprobacion = 0;
-    } else {
-        echo "Error al actualizar la variable de comprobación " . $conn->error;
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -90,17 +79,16 @@ if (isset($_POST['close-popup'])) {
 				<div class="col-xxl-8 col-lg-10" style="border-right:2px solid black;">
 					<div class="container text-center">
 						<div class="row text-center ">
-						<?php
+							<?php
 							if ($mesa == "") {
 
 								print "<h1> Selecciona un numero de Mesa</h1>";
-								
-							}else {
-								print "<h2>MESA $mesa</h2>";	
+							} else {
+								print "<h2>MESA $mesa</h2>";
 								print $proRepository->drawProductCard($proRepository->getAllCategoryProduct($category));
 							}
-								
-						?>
+
+							?>
 						</div>
 					</div>
 				</div>
@@ -184,26 +172,25 @@ if (isset($_POST['close-popup'])) {
 					<!-- Ticket -->
 					<div class="row ticket">
 						<div class="col-12 text-center titulo2 bg-dark">
-							<p>Ticket<?php print "   $idTicket"?></p>
+							<p>Ticket<?php print "   $idTicket" ?></p>
 						</div>
 						<div class="row ticket">
-							<?php print $tickRepository->drawPreticket($idTicket)?>
-							
+							<?php print $tickRepository->drawPreticket($idTicket) ?>
+
 
 							<button id="open-popup">detalles de ticket</button>
-<div class="popup-overlay"></div>
-<div class="popup">
-<button id="close-popup" style="float:right;margin-bottom:20px;">X</button>
-  <h2><?="TICKET"."\n". $mesa?></h2>
-<p>
-<?= $tickRepository->drawTicket($idTicket)?>
- <p>Código de empleado <?= $codEmpleado ?></p>
- <br>
- <button id="imprimirTicket">Imprimir Ticket</button>
- <button id="cerrarTicket">Cerrar Ticket</button>
-</p>
-</div>
-						</div>				
+							<div class="popup-overlay"></div>
+							<div class="popup">
+								<button id="close-popup" style="float:right;margin-bottom:20px;">X</button>
+								<h2><?= "TICKET" . "\n" . $mesa ?></h2>
+								<p>
+									<?= $tickRepository->drawTicket($idTicket) ?>
+								</p>
+								<br>
+								<a href="cerradoTicket.php?id=<?php echo $idTicket; ?>"><button>Enviar</button></a>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
