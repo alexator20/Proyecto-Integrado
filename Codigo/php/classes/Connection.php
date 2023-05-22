@@ -8,7 +8,7 @@ class Connection
     {
         $this->connect();
     }
-    
+
     protected function connect()
     {
         $config = json_decode(file_get_contents(__DIR__ . "/../../Assets/js/dba.json"), true);
