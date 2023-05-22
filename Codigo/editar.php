@@ -1,26 +1,12 @@
 <?php
+/* if (session_status() !== PHP_SESSION_ACTIVE) session_start();
+require_once __DIR__ . "/php/autoloader.php"; */
 $security = new Security();
 //para comprobar si estas logeado
 $security->checkLoggedIn();
 $conexion = mysqli_connect('localhost', 'root', '', 'tpvdatabase');
 
-if (isset($_POST['update'])) {
-    $cod_empleado = $_POST['cod_empleado'];
-    $nombre = $_POST['nombre'];
-    $apellidos = $_POST['apellidos'];
-    $correo = $_POST['correo'];
-    $direccion = $_POST['direccion'];
-
-    // Realiza la operación de actualización del campo en la base de datos
-    $updateQuery = "UPDATE empleado SET nombre = ?, apellidos = ?, correo = ?, direccion = ? WHERE cod_empleado = ?";
-    $stmt = $conn->prepare($updateQuery);
-    $stmt->bind_param("ssssi", $nombre, $apellidos, $correo, $direccion, $cod_empleado);
-    $stmt->execute();
-
-    // Redirecciona a la página de empleados.php después de la actualización
-    header("Location: empleados.php");
-    exit();
-}
+//$security->updateWorker(isset($_POST['correo']));
 
 if (isset($_POST['cod_empleado'])) {
     $cod_empleado = $_POST['cod_empleado'];
