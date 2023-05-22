@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-05-2023 a las 20:25:28
+-- Tiempo de generación: 22-05-2023 a las 12:26:32
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -129,7 +129,7 @@ INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`, `categoria`, `imagen
 (60, 'Bocadillo Bacon con', 4.00, 'Bocadillos', 'baconqueso.jpg'),
 (61, 'Sobrasada con Queso', 4.00, 'Bocadillos', 'sobrasada con queso y cebolla.jpg'),
 (62, 'Bocadillo de Albondi', 4.00, 'Bocadillos', 'bocadilloalbondigas.jpg'),
-(63, 'Francesa con Jamon', 4.00, 'Bocadillos', 'NULL'),
+(63, 'Revuelto', 4.00, 'Bocadillos', 'revuelto.jpg'),
 (64, 'Francesa con Sobrasa', 4.00, 'Bocadillos', 'francesa con sobrasada.jpg'),
 (65, 'Atun con Olivas', 4.00, 'Bocadillos', 'atunconolivas.jpg'),
 (66, 'Pechuga y Queso', 4.00, 'Bocadillos', 'pechuga y queso.jpg'),
@@ -139,10 +139,7 @@ INSERT INTO `producto` (`cod_producto`, `nombre`, `precio`, `categoria`, `imagen
 (70, 'Mollejitas Morunas', 3.50, 'Tapas', 'mollejas.jpg'),
 (71, 'Esgarraet o Ajoarrie', 3.50, 'Tapas', 'croquetas.jpg'),
 (72, 'Bravas', 3.50, 'Tapas', 'bravas.jpg'),
-(73, 'Morro', 3.50, 'Tapas', 'morro.jpg'),
-(74, 'Oreja Adobada', 3.50, 'Tapas', 'orejacerdo.jpg'),
-(75, 'Ensaladilla Rusa', 3.50, 'Tapas', 'ensaladillarusa.jpg'),
-(76, 'Albondigas de \"La ab', 3.50, 'Tapas', 'albondigas.jpg');
+(73, 'Morro', 3.50, 'Tapas', 'morro.jpg');
 
 -- --------------------------------------------------------
 
@@ -155,6 +152,17 @@ CREATE TABLE `producto_servido` (
   `cod_producto` int(11) NOT NULL,
   `cod_ticket` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto_servido`
+--
+
+INSERT INTO `producto_servido` (`cantidad`, `cod_producto`, `cod_ticket`) VALUES
+(2, 6, 2),
+(1, 7, 1),
+(1, 7, 2),
+(2, 8, 1),
+(1, 68, 1);
 
 -- --------------------------------------------------------
 
@@ -170,6 +178,17 @@ CREATE TABLE `ticket` (
   `cod_empleado` int(11) DEFAULT NULL,
   `estado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `ticket`
+--
+
+INSERT INTO `ticket` (`cod_ticket`, `hora`, `fecha`, `num_mesa`, `cod_empleado`, `estado`) VALUES
+(1, '20:28', '2023-05-21', '1T', 1, 1),
+(2, '20:28', '2023-05-21', '6', 1, 1),
+(3, '08:54', '2023-05-22', '6T', 1, 1),
+(4, '08:54', '2023-05-22', '10', 1, 1),
+(5, '08:58', '2023-05-22', '9', 1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -221,7 +240,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT de la tabla `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `cod_ticket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_ticket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas

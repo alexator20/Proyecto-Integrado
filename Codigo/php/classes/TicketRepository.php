@@ -92,8 +92,10 @@ class TicketRepository extends Connection
         $query = $this->conn->query($sql);
         while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
             if ($idTicket == $row["cod_ticket"]) {
-                $output .= "";
-                $output .= "<p>" . $row["nombre"] . " -- " . $row["cantidad"] . "</p>";
+                $output .= '<div class="row">';
+                $output .= '<div class="col-md-10">' . $row["nombre"] . '</div>';
+                $output .= '<div class="col-md-2"> ' . $row["cantidad"] . '</div>';
+                $output .= '</div>';
             }
         }
         return $output;

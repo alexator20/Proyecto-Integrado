@@ -175,8 +175,7 @@ $tickRepository = new TicketRepository;
 						<div class="col-12 text-center titulo2 bg-dark">
 							<p>Ticket<?php print "   $idTicket"?></p>
 						</div>
-						<div class="">
-							
+						<div class="row ticket">
 							<?php print $tickRepository->drawPreticket($idTicket)?>
 						</div>					
 					</div>

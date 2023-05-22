@@ -1,5 +1,6 @@
 <?php
-$conexion = mysqli_connect('localhost', 'root', '', 'tpvdatabase');
+require_once __DIR__ . "/php/autoloader.php";
+$conn = new Connection;
 
 if (isset($_POST['update'])) {
     $cod_empleado = $_POST['cod_empleado'];
@@ -10,7 +11,7 @@ if (isset($_POST['update'])) {
 
     // Realiza la operación de actualización del campo en la base de datos
     $updateQuery = "UPDATE empleado SET nombre = ?, apellidos = ?, correo = ?, direccion = ? WHERE cod_empleado = ?";
-    $stmt = $conexion->prepare($updateQuery);
+    $stmt = $conn->prepare($updateQuery);
     $stmt->bind_param("ssssi", $nombre, $apellidos, $correo, $direccion, $cod_empleado);
     $stmt->execute();
 
@@ -79,30 +80,32 @@ if (isset($_POST['cod_empleado'])) {
 
     <!-- MAIN -->
     <main class="vh-100">
-        <div class="container-fluid">
-            <div class="col-12">
-                <div class="container-fluid d-flex justify-content-center">
-                    <table>
-                        <tr class="headerTabla">
-                            <td>Nombre</td>
-                            <td>Apellidos</td>
-                            <td>Correo</td>
-                            <td>Direccion</td>
-                        </tr>
-                        <tr>
+    <form method="POST" action="">
+    <div class="container-fluid">
+        <div class="col-12">
+            <div class="container-fluid d-flex justify-content-center">
+                <table>
+                    <tr class="headerTabla">
+                        <td>Nombre</td>
+                        <td>Apellidos</td>
+                        <td>Correo</td>
+                        <td>Direccion</td>
+                    </tr>
+                    <tr>
                         <td><input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $mostrar['nombre']; ?>" required></td>
                         <td><input type="text" class="form-control" id="apellidos" name="apellidos" value="<?php echo $mostrar['apellidos']; ?>" required></td>
                         <td><input type="email" class="form-control" id="correo" name="correo" value="<?php echo $mostrar['correo']; ?>" required></td>
                         <td><input type="text" class="form-control" id="direccion" name="direccion" value="<?php echo $mostrar['direccion']; ?>" required></td>
-                        </tr>                       
-                    </table>
-                    
-                </div>
+                    </tr>                       
+                </table>
+            </div>
             <div class="botonEnviar"> 
-            <button style="height:50px " type="submit" name="update" class="btn btn-dark">Actualizar</button>
+                <button style="height:50px" type="submit" name="update" class="btn btn-dark">Actualizar</button>
             </div>
-              
-            </div>
+        </div>
+    </div>
+</form>
+
         </div>
     </main>
 
