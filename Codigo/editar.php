@@ -65,7 +65,7 @@ if (isset($_POST['cod_empleado'])) {
 							<a class="nav-link" href="empleados.php">EMPLEADOS</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="caja.php">CAJA</a>
+							<a class="nav-link" href="caja.php" onclick="return false;">CAJA</a>
 						</li>
 						<a class="navbar-brand log-out" href="register.php">
 							<img src="./Assets/imgs/log-out.png" alt="Logo" width="40" height="40">
