@@ -201,6 +201,7 @@ if (isset($_POST['close-popup'])) {
  <p>Código de empleado <?= $codEmpleado ?></p>
  <br>
  <button id="imprimirTicket">Imprimir Ticket</button>
+ <button id="cerrarTicket">Cerrar Ticket</button>
 </p>
 </div>
 						</div>				
