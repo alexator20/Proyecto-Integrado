@@ -6,7 +6,9 @@
 -- Tiempo de generación: 21-05-2023 a las 20:25:28
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
-
+DROP DATABASE IF EXISTS tpvdatabase;
+CREATE DATABASE tpvdatabase;
+USE tpvdatabase;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
