@@ -13,18 +13,3 @@ function appendToResult(value) {
     // Borrar el contenido del campo de texto
     document.querySelector('.result').value = "";
   });
-  
-  const openPopupButton = document.getElementById('open-popup');
-const closePopupButton = document.getElementById('close-popup');
-const popupOverlay = document.querySelector('.popup-overlay');
-const popup = document.querySelector('.popup');
-
-openPopupButton.addEventListener('click', () => {
-  popup.classList.add('show');
-  popupOverlay.classList.add('show');
-});
-
-closePopupButton.addEventListener('click', () => {
-  popup.classList.remove('show');
-  popupOverlay.classList.remove('show');
-});

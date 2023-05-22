@@ -8,9 +8,20 @@ $security->checkLoggedIn();
 $category = isset($_SESSION["categoria"]) ? $_SESSION["categoria"] : "Cafes";
 $mesa = isset($_SESSION["mesa"]) ? $_SESSION["mesa"] : "";
 $idTicket = isset($_SESSION["idTicket"]) ? $_SESSION["idTicket"] : 0;
-
+$codEmpleado=isset($_SESSION["codEmpleado"]) ? $_SESSION["codEmpleado"] : "0";
 $proRepository = new productRepository;
 $tickRepository = new TicketRepository;
+
+
+if (isset($_POST['close-popup'])) {
+    // Actualizar la variable de comprobación a 0 en la base de datos
+    $updateSql = "UPDATE ticket SET estado = 0 WHERE id = 1"; // Reemplaza "tabla_tickets" con el nombre de tu tabla y "id" con el campo que identifica el ticket
+    if ($conn->query($updateSql) === TRUE) {
+        $comprobacion = 0;
+    } else {
+        echo "Error al actualizar la variable de comprobación " . $conn->error;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -178,12 +189,27 @@ $tickRepository = new TicketRepository;
 						<div class="">
 							
 							<?php print $tickRepository->drawPreticket($idTicket)?>
-						</div>					
+							
+
+							<button id="open-popup">detalles de ticket</button>
+<div class="popup-overlay"></div>
+<div class="popup">
+<button id="close-popup" style="float:right;margin-bottom:20px;">X</button>
+  <h2><?="TICKET"."\n". $mesa?></h2>
+<p>
+<?= $tickRepository->drawTicket($idTicket)?>
+ <p>Código de empleado <?= $codEmpleado ?></p>
+ <br>
+ <button id="imprimirTicket">Imprimir Ticket</button>
+</p>
+</div>
+						</div>				
 					</div>
 				</div>
 			</div>
 	</main>
 	<script src="./Assets/js/index.js"></script>
+	<script src="./Assets/js/PopUp.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 
