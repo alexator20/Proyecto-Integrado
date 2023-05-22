@@ -280,3 +280,14 @@ button {
   padding-top: 20px;
   text-align: center;
 }
+
+
+.borrar{
+  background-color: #f944e7;
+  color:white;
+}
+
+.borrar:hover{
+  background-color: #ef67f7;
+  color: white;
+}
